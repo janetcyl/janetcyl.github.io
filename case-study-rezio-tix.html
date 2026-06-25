@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rezio TIX — OMO Ticketing · Case Study · Janet Chen</title>
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iIzFmMmE1MiIvPjx0ZXh0IHg9IjYuNSIgeT0iMjMiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjZmZmIj5KPC90ZXh0PjxjaXJjbGUgY3g9IjI0IiBjeT0iMjIiIHI9IjMuNiIgZmlsbD0iIzE2YTQ3ZCIvPjwvc3ZnPg==" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Noto+Sans+TC:wght@500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#1f2a52; --navy-2:#26336b; --navy-deep:#141d3b;
+    --green:#16a47d; --green-soft:#34c79b; --green-tint:#e7f6f0;
+    --cream:#f5f7f4; --card:#ffffff; --ink:#222a3f; --ink-soft:#5d6678;
+    --line:#e3e8e6; --max:840px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--ink);
+    font-family:'Inter','Noto Sans TC',-apple-system,system-ui,sans-serif;
+    line-height:1.7;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 30px;}
+  h1,h2,h3,h4{font-family:'Poppins','Noto Sans TC',sans-serif;letter-spacing:-.01em;}
+  a{color:var(--green);text-decoration:none;}
+
+  /* hero */
+  header{background:linear-gradient(150deg,#1f2a52 0%,#26336b 60%,#1d2a57 100%);
+    color:#fff;position:relative;overflow:hidden;padding:64px 0 56px;}
+  header .deco{position:absolute;inset:0;opacity:.14;pointer-events:none;}
+  header .wrap{position:relative;z-index:2;}
+  .tag{display:inline-flex;align-items:center;gap:8px;background:rgba(52,199,155,.16);
+    color:var(--green-soft);border:1px solid rgba(52,199,155,.4);border-radius:999px;
+    padding:6px 15px;font-size:.74rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-family:'Poppins';}
+  .cs-title{font-family:'Fraunces',Georgia,serif;font-weight:500;
+    font-size:clamp(2.1rem,5.4vw,3.3rem);line-height:1.08;margin:18px 0 0;}
+  .cs-title em{font-style:italic;color:var(--green-soft);}
+  .cs-sub{font-size:clamp(1.02rem,1.8vw,1.16rem);color:rgba(255,255,255,.84);max-width:620px;margin-top:18px;}
+  .meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:28px;font-size:.88rem;color:rgba(255,255,255,.78);}
+  .meta span{display:inline-flex;align-items:center;gap:8px;}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--green-soft);}
+  .impact-hero{display:inline-flex;align-items:center;gap:9px;margin-top:26px;background:var(--green);
+    color:#fff;font-family:'Poppins';font-weight:600;font-size:.96rem;border-radius:999px;padding:9px 20px;
+    box-shadow:0 12px 28px -14px rgba(22,164,125,.9);}
+
+  /* body */
+  main{padding:54px 0 30px;}
+  .block{margin-bottom:48px;}
+  .kicker{font-family:'Poppins';font-weight:700;font-size:.78rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--green);display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .kicker::after{content:"";height:2px;flex:1;max-width:90px;background:linear-gradient(90deg,var(--green),transparent);border-radius:2px;}
+  .block h2{font-size:clamp(1.45rem,3vw,1.95rem);font-weight:800;color:var(--navy);line-height:1.18;margin-bottom:14px;}
+  .block h3{font-size:1.08rem;font-weight:700;color:var(--navy);margin:24px 0 8px;}
+  .block p{color:var(--ink-soft);font-size:1.02rem;margin-bottom:14px;}
+  .block p b,.block li b{color:var(--ink);font-weight:600;}
+  .block ul{list-style:none;margin:6px 0 14px;}
+  .block li{position:relative;padding-left:24px;margin-bottom:11px;color:var(--ink-soft);font-size:1.02rem;}
+  .block li::before{content:"";position:absolute;left:2px;top:11px;width:8px;height:8px;border-radius:50%;background:var(--green);}
+
+  .panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 30px;}
+  .panel.tint{background:var(--green-tint);border-color:#cfe6dd;}
+  .panel h3:first-child{margin-top:0;}
+
+  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:8px 0 4px;}
+  @media(max-width:640px){.stat-row{grid-template-columns:1fr;}}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;text-align:center;}
+  .stat .n{font-family:'Poppins';font-weight:800;font-size:1.9rem;color:var(--green);line-height:1;}
+  .stat .l{font-size:.9rem;color:var(--ink-soft);margin-top:8px;}
+
+  .note{display:flex;gap:12px;align-items:flex-start;background:var(--green-tint);
+    border-left:4px solid var(--green);border-radius:0 12px 12px 0;padding:15px 20px;color:#0e6e54;font-size:.97rem;}
+
+  .skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:6px;}
+  .chip{background:#eef1ef;border:1px solid var(--line);border-radius:999px;padding:7px 15px;
+    font-size:.86rem;color:var(--navy);font-weight:500;}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--ink-soft);font-size:.84rem;text-align:center;}
+  .cs-lang{position:absolute;top:20px;right:24px;z-index:5;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.45);color:#fff;font-family:'Poppins';font-weight:600;font-size:.8rem;letter-spacing:.04em;border-radius:999px;padding:6px 14px;cursor:pointer;transition:.2s;}
+  .cs-lang:hover{background:var(--green);border-color:var(--green);}
+</style>
+</head>
+<body>
+
+<header>
+  <svg class="deco" viewBox="0 0 1200 420" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#9fd9c5" stroke-width="2">
+      <rect x="900" y="60" width="90" height="150" rx="12"/>
+      <rect x="915" y="80" width="60" height="64" rx="6"/>
+      <rect x="915" y="170" width="48" height="8" rx="4"/>
+      <rect x="1030" y="120" width="96" height="50" rx="8"/>
+      <line x1="1030" y1="146" x2="1126" y2="146"/>
+      <circle cx="980" cy="300" r="52"/>
+      <path d="M958 300 l16 16 l30 -34" stroke-width="3"/>
+    </g>
+  </svg>
+  <button id="csLang" class="cs-lang" type="button">中文</button>
+  <div class="wrap">
+    <span class="tag" data-i18n="tag">Travel Tech · OMO · 0→1</span>
+    <h1 class="cs-title" data-i18n="title">Rezio TIX —<br/><em>OMO Ticketing</em></h1>
+    <p class="cs-sub" data-i18n="sub">A 0-to-1 software + hardware system that extended Rezio from online booking into on-site ticketing and payment — grounded in hands-on user research and built together with a designer.</p>
+    <div class="meta">
+      <span data-i18n="m1"><i class="dot"></i> Role: Product Manager</span>
+      <span><i class="dot"></i> 2021–2022</span>
+      <span data-i18n="m3"><i class="dot"></i> Rezio (a KKday company)</span>
+    </div>
+    <div class="impact-hero" data-i18n="impact">↓ ~30% operating cost for adopting venues</div>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <section class="block">
+    <div class="kicker" data-i18n="k1">Context &amp; Problem</div>
+    <h2 data-i18n="h_prob">Online and offline lived in two separate worlds</h2>
+    <p data-i18n="p_prob">Rezio began as a purely online booking platform. But attractions and theme parks with physical entrances still ran their on-site operations on manual ticketing, paper tickets and a patchwork of point-of-sale hardware. That created three pain points:</p>
+    <ul>
+      <li data-i18n="pl1">Online and offline systems were <b>siloed</b> — orders and inventory data couldn't be unified.</li>
+      <li data-i18n="pl2">On-site selling, cash handling, invoicing and end-of-day closing relied on <b>manual work</b> — slow and error-prone.</li>
+      <li data-i18n="pl3">Paper tickets and scattered checkout devices made the <b>on-site flow and reconciliation</b> cumbersome.</li>
+    </ul>
+    <p data-i18n="p_prob2">Venues needed one solution that connected seamlessly to their existing online system while also covering the realities of the physical front line.</p>
+  </section>
+
+  <section class="block">
+    <div class="kicker" data-i18n="k2">Goal</div>
+    <h2 data-i18n="h_goal">One OMO solution for on-site sales</h2>
+    <p data-i18n="p_goal">Build <b>Rezio TIX</b> — an OMO (online-merge-offline) on-site ticketing solution. The scope I owned was <b>on-site sales</b>:</p>
+    <div class="panel">
+      <h3 data-i18n="g_h1">POS counter machine</h3>
+      <p data-i18n="g_p1">Staff-assisted selling, cash and multi-payment, invoice issuance and end-of-day closing.</p>
+      <h3 data-i18n="g_h2">Self-service kiosk</h3>
+      <p data-i18n="g_p2">Visitors buy and pay on their own, with no staff assistance.</p>
+      <p style="margin-bottom:0;" data-i18n="g_p3">Both share the same trip and inventory data as the existing online system, achieving true online-offline integration.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="kicker" data-i18n="k3">User Research</div>
+    <h2 data-i18n="h_ur">Researching a product with no precedent</h2>
+    <p data-i18n="p_ur">This was Rezio's first move into physical ticketing, with no internal playbook to lean on — so I led the user research myself and used it as the basis for product and design decisions:</p>
+    <ul>
+      <li data-i18n="ur1"><b>In-depth interviews</b> with people who had hands-on ticketing / cashiering experience, to understand the real on-site pain points and habits.</li>
+      <li data-i18n="ur2"><b>Competitive research:</b> ticket machines were rare to study, so I studied mature <b>self-checkout and self-ordering kiosks</b> instead, borrowing their self-service, payment and error-prevention patterns.</li>
+      <li data-i18n="ur3"><b>Interactive prototype testing:</b> ran user research on a clickable prototype to validate the flow and find friction <b>before</b> development.</li>
+      <li data-i18n="ur4"><b>Ongoing interviews after the DEMO:</b> once a demo version shipped, I kept interviewing prospective clients to iterate on real feedback before and after launch.</li>
+    </ul>
+    <p data-i18n="p_ur2">The research surfaced three roles with very different contexts; I handed those insights to the designer so the design could answer real needs:</p>
+    <div class="panel">
+      <h3 data-i18n="ro_h1">🧑‍💼 Counter ticketing staff (POS)</h3>
+      <p data-i18n="ro_p1">Trained, but working under queue pressure — they need to sell and take payment <b>fast and without mistakes</b>. → Minimize taps, default to the most likely choice, and block errors before checkout.</p>
+      <h3 data-i18n="ro_h2">🧍 Self-service visitors (Kiosk)</h3>
+      <p data-i18n="ro_p2">Untrained, possibly older or international, using it just once. → The flow must be <b>self-explanatory with zero learning</b> — linear steps, obvious labels and icons.</p>
+      <h3 data-i18n="ro_h3">🧮 Manager / accountant (back office)</h3>
+      <p data-i18n="ro_p3">Needs <b>trustworthy reconciliation</b> and traceable cancel / refund records. → Closing forces discrepancy reasons; cancel and refund leave a full audit trail.</p>
+    </div>
+    <div class="note" data-i18n="ur_note">✦ The core idea: research "on-site selling" as a product with real users — not just port the online flow onto a machine.</div>
+  </section>
+
+  <section class="block">
+    <div class="kicker" data-i18n="k4">Solution · Product &amp; Flow Design</div>
+    <h2 data-i18n="h_sol">Designed for the front line</h2>
+    <p data-i18n="p_sol">I defined the flows below from the research insights and shaped them together with the designer, who owned the visual interface.</p>
+
+    <h3 data-i18n="s_h1">A POS flow designed for speed</h3>
+    <p data-i18n="s_p1">Because counter staff sell under queue pressure, the interface optimizes for efficiency and error prevention:</p>
+    <ul>
+      <li data-i18n="sl1"><b>Smart date / session selection:</b> defaults to today's sessions; a "next session date" button jumps straight to the next date that actually has sessions (not just tomorrow); a 3-month calendar picker; horizontal swiping when there are many sessions; sessions past their cutoff are hidden automatically to prevent mis-selling.</li>
+      <li data-i18n="sl2"><b>Intuitive cart:</b> adjust quantity with +/− or tap the number field to type directly; "remove" only appears after decrementing to 1, preventing accidental deletion; the cart summary groups identical trips together for a clean final check with the customer.</li>
+      <li data-i18n="sl3"><b>Easy cash handling:</b> type the tendered amount on a number pad and change is auto-calculated; "Confirm" stays disabled until tendered ≥ amount due — preventing payment errors at the interface level.</li>
+      <li data-i18n="sl4"><b>Flexible voucher printing:</b> print on the spot, or choose "print later" and reprint from order lookup.</li>
+    </ul>
+
+    <h3 data-i18n="s_h2">A Kiosk flow designed for zero learning</h3>
+    <p data-i18n="s_p2">The kiosk faces one-time visitors with no one to help, so the flow is deliberately linear and self-explanatory — letting travelers of any age or language complete purchase and payment on their own and take pressure off the counter.</p>
+
+    <h3 data-i18n="s_h3">Rigorous fail-safes (a UX design focus)</h3>
+    <ul>
+      <li data-i18n="fs1"><b>Daily cash reconciliation &amp; closing:</b> count cash by denomination, auto-calculate, and compare against the expected drawer total — any mismatch requires a written reason before closing, with manager-level authentication.</li>
+      <li data-i18n="fs2"><b>Cancel and refund separated:</b> two independent, non-interfering actions; every record, reason and internal note flows back to the Admin back office, so accounting stays traceable.</li>
+      <li data-i18n="fs3"><b>Pre-checkout auto-validation:</b> the cart checks inventory and minimum-order limits before payment; an authorized user can still force-create when needed — balancing flexibility and control.</li>
+      <li data-i18n="fs4"><b>Seat-hold mechanism:</b> orders hold inventory for 10 minutes after checkout and auto-expire if unpaid, so stock isn't locked up.</li>
+    </ul>
+
+    <h3 data-i18n="s_h4">Standardized global rollout</h3>
+    <p data-i18n="s_p4">I personally wrote the product manuals and SOPs — documenting POS / Kiosk setup, selling, lookup, refund and closing — so teams and clients across regions could onboard with a consistent process and lower coordination cost.</p>
+  </section>
+
+  <section class="block">
+    <div class="kicker" data-i18n="k5">Highlights</div>
+    <h2 data-i18n="h_hi">What made this hard — and interesting</h2>
+    <div class="panel tint">
+      <h3 data-i18n="hi1h">Research-driven, not gut-driven</h3>
+      <p data-i18n="hi1p">With no ticket machine to copy, I leaned on interviews, competitive research (self-checkout / self-ordering kiosks) and interactive prototype testing to pin down the gap between a trained cashier who needs speed and a one-time visitor who needs zero learning — then handed those insights to the designer to execute.</p>
+      <h3 data-i18n="hi2h">0→1 software + hardware integration</h3>
+      <p data-i18n="hi2p">Unlike a pure software feature, this project spanned hardware devices, payment, invoicing and the online system — aligning specs across multiple vendors, then distilling complex on-site operations into a clean, easy-to-operate terminal interface.</p>
+      <h3 data-i18n="hi3h">Agile response to vendor risk</h3>
+      <p data-i18n="hi3p">During 2021 production testing, the original invoice / payment hardware vendor underperformed. To win the Heping Island Geopark bid, the team decisively switched to a new hardware partner, re-ran compatibility development and integration testing — and still shipped on schedule.</p>
+      <h3 data-i18n="hi4h">Treating on-site operations as a product</h3>
+      <p data-i18n="hi4p">Many decisions — from cash-count discrepancy control to the separation of cancel and refund — came from understanding how front-line ticketing and accounting staff actually work, so the system doesn't just "sell tickets" but genuinely reduces on-site errors and reconciliation load.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="kicker" data-i18n="k6">Outcome</div>
+    <h2 data-i18n="h_out">Results &amp; recognition</h2>
+    <div class="stat-row">
+      <div class="stat" data-i18n="o1"><div class="n">↓30%</div><div class="l">operating cost for adopting venues</div></div>
+      <div class="stat" data-i18n="o2"><div class="n">3-in-1</div><div class="l">online + POS + Kiosk deployed at Heping Island Geopark</div></div>
+      <div class="stat" data-i18n="o3"><div class="n">2022</div><div class="l">showcased at Future Commerce Expo "KKday Future Park"</div></div>
+    </div>
+    <ul>
+      <li data-i18n="ol1">Helped venues unify online and offline — bringing on-site selling, payment and closing into one system, <b>cutting operating cost by ~30%</b>.</li>
+      <li data-i18n="ol2">Full deployment case: <b>Heping Island Geopark</b> (online sales + POS + Kiosk).</li>
+      <li data-i18n="ol3"><b>Brand &amp; market exposure:</b> showcased at the 2022 Future Commerce Expo under the "KKday Future Park" theme and covered by LINE Travel and other media; in March 2024, Vice President Lai Ching-te experienced the digital ticketing during his visit to KKday's headquarters.</li>
+    </ul>
+    <div class="note" data-i18n="out_note">✦ The project also rode Rezio's broader momentum at the time — merchant adoption grew 350%+ in a single year, with 2M+ travelers served — and laid the foundation for the platform's expansion into physical venues.</div>
+  </section>
+
+  <section class="block">
+    <div class="kicker" data-i18n="k7">Skills applied</div>
+    <div class="skills">
+      <span class="chip" data-i18n="c1">User research (interviews · competitive study · prototype testing)</span>
+      <span class="chip" data-i18n="c2">Flow design (with a designer)</span>
+      <span class="chip" data-i18n="c3">Error-prevention design</span>
+      <span class="chip" data-i18n="c4">0→1 product planning</span>
+      <span class="chip" data-i18n="c5">Hardware / software integration PM</span>
+      <span class="chip" data-i18n="c6">Multi-vendor coordination</span>
+      <span class="chip" data-i18n="c7">Risk response &amp; replanning</span>
+      <span class="chip" data-i18n="c8">Product docs &amp; SOP standardization</span>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer data-i18n="foot">© 2026 Janet Chen · 陳毓聆 — Rezio TIX case study</footer>
+
+
+<script>
+  const I18N={"tag": {"en": "Travel Tech · OMO · 0→1", "zh": "旅遊科技 · OMO · 0→1"}, "title": {"en": "Rezio TIX —<br/><em>OMO Ticketing</em>", "zh": "Rezio TIX —<br/><em>現場售票整合系統</em>"}, "sub": {"en": "A 0-to-1 software + hardware system that extended Rezio from online booking into on-site ticketing and payment — grounded in hands-on user research and built together with a designer.", "zh": "從 0 到 1 的軟硬體系統，把 Rezio 從線上預訂延伸到現場售票與收款——奠基於實地使用者研究，並與設計師協作打造。"}, "m1": {"en": "<i class=\"dot\"></i> Role: Product Manager", "zh": "<i class=\"dot\"></i> 角色：產品經理"}, "m3": {"en": "<i class=\"dot\"></i> Rezio (a KKday company)", "zh": "<i class=\"dot\"></i> Rezio（KKday 旗下）"}, "impact": {"en": "↓ ~30% operating cost for adopting venues", "zh": "↓ 導入場館的營運成本約降 30%"}, "k1": {"en": "Context &amp; Problem", "zh": "背景與問題"}, "h_prob": {"en": "Online and offline lived in two separate worlds", "zh": "線上與線下，活在兩個世界"}, "p_prob": {"en": "Rezio began as a purely online booking platform. But attractions and theme parks with physical entrances still ran their on-site operations on manual ticketing, paper tickets and a patchwork of point-of-sale hardware. That created three pain points:", "zh": "Rezio 起家於純線上預訂平台。但有實體入口的景點與主題樂園，現場營運仍仰賴人工售票、紙本票券與拼湊的 POS 硬體，衍生三大痛點："}, "pl1": {"en": "Online and offline systems were <b>siloed</b> — orders and inventory data couldn't be unified.", "zh": "線上與線下系統<b>各自為政</b>——訂單與庫存資料無法整合。"}, "pl2": {"en": "On-site selling, cash handling, invoicing and end-of-day closing relied on <b>manual work</b> — slow and error-prone.", "zh": "現場銷售、現金處理、發票與每日關帳都靠<b>人工</b>——既慢又容易出錯。"}, "pl3": {"en": "Paper tickets and scattered checkout devices made the <b>on-site flow and reconciliation</b> cumbersome.", "zh": "紙本票券與分散的結帳設備，讓<b>現場流程與對帳</b>變得繁瑣。"}, "p_prob2": {"en": "Venues needed one solution that connected seamlessly to their existing online system while also covering the realities of the physical front line.", "zh": "場館需要一套能無縫銜接既有線上系統、又能涵蓋實體第一線現實的方案。"}, "k2": {"en": "Goal", "zh": "目標"}, "h_goal": {"en": "One OMO solution for on-site sales", "zh": "一套服務現場銷售的 OMO 方案"}, "p_goal": {"en": "Build <b>Rezio TIX</b> — an OMO (online-merge-offline) on-site ticketing solution. The scope I owned was <b>on-site sales</b>:", "zh": "打造 <b>Rezio TIX</b>——一套 OMO（線上融合線下）的現場售票方案。我負責的範圍是<b>現場銷售</b>："}, "g_h1": {"en": "POS counter machine", "zh": "POS 櫃檯售票機"}, "g_p1": {"en": "Staff-assisted selling, cash and multi-payment, invoice issuance and end-of-day closing.", "zh": "由人員協助銷售，支援現金與多元支付、發票開立與每日關帳。"}, "g_h2": {"en": "Self-service kiosk", "zh": "Kiosk 自助售票機"}, "g_p2": {"en": "Visitors buy and pay on their own, with no staff assistance.", "zh": "旅客自行購票與付款，無須人員協助。"}, "g_p3": {"en": "Both share the same trip and inventory data as the existing online system, achieving true online-offline integration.", "zh": "兩者與既有線上系統共用相同的行程與庫存資料，達成真正的線上線下整合。"}, "k3": {"en": "User Research", "zh": "使用者研究"}, "h_ur": {"en": "Researching a product with no precedent", "zh": "研究一個沒有前例的產品"}, "p_ur": {"en": "This was Rezio's first move into physical ticketing, with no internal playbook to lean on — so I led the user research myself and used it as the basis for product and design decisions:", "zh": "這是 Rezio 首次跨入實體售票，沒有內部範本可依循——於是我親自主導使用者研究，並以此作為產品與設計決策的依據："}, "ur1": {"en": "<b>In-depth interviews</b> with people who had hands-on ticketing / cashiering experience, to understand the real on-site pain points and habits.", "zh": "對有實際售票／收銀經驗的人進行<b>深度訪談</b>，理解現場真實的痛點與習慣。"}, "ur2": {"en": "<b>Competitive research:</b> ticket machines were rare to study, so I studied mature <b>self-checkout and self-ordering kiosks</b> instead, borrowing their self-service, payment and error-prevention patterns.", "zh": "<b>競品研究：</b>售票機案例稀少，於是我改研究成熟的<b>自助結帳與自助點餐機</b>，借鏡其自助、支付與防呆模式。"}, "ur3": {"en": "<b>Interactive prototype testing:</b> ran user research on a clickable prototype to validate the flow and find friction <b>before</b> development.", "zh": "<b>互動原型測試：</b>以可點擊原型進行使用者研究，在開發<b>之前</b>就驗證流程、找出摩擦點。"}, "ur4": {"en": "<b>Ongoing interviews after the DEMO:</b> once a demo version shipped, I kept interviewing prospective clients to iterate on real feedback before and after launch.", "zh": "<b>DEMO 後持續訪談：</b>推出 demo 版本後，持續訪談潛在客戶，依真實回饋在上線前後反覆迭代。"}, "p_ur2": {"en": "The research surfaced three roles with very different contexts; I handed those insights to the designer so the design could answer real needs:", "zh": "研究浮現出三種情境迥異的角色；我把洞察交給設計師，讓設計能回應真實需求："}, "ro_h1": {"en": "🧑‍💼 Counter ticketing staff (POS)", "zh": "🧑‍💼 櫃檯售票人員（POS）"}, "ro_p1": {"en": "Trained, but working under queue pressure — they need to sell and take payment <b>fast and without mistakes</b>. → Minimize taps, default to the most likely choice, and block errors before checkout.", "zh": "受過訓練，但在排隊壓力下作業——需要<b>又快又不出錯</b>地售票收款。→ 減少點按、預設最可能的選項，並在結帳前擋下錯誤。"}, "ro_h2": {"en": "🧍 Self-service visitors (Kiosk)", "zh": "🧍 自助旅客（Kiosk）"}, "ro_p2": {"en": "Untrained, possibly older or international, using it just once. → The flow must be <b>self-explanatory with zero learning</b> — linear steps, obvious labels and icons.", "zh": "未受訓練，可能年長或來自海外，而且只用一次。→ 流程必須<b>零學習、不言自明</b>——線性步驟、明確的標籤與圖示。"}, "ro_h3": {"en": "🧮 Manager / accountant (back office)", "zh": "🧮 管理者／會計（後台）"}, "ro_p3": {"en": "Needs <b>trustworthy reconciliation</b> and traceable cancel / refund records. → Closing forces discrepancy reasons; cancel and refund leave a full audit trail.", "zh": "需要<b>可信的對帳</b>與可追溯的取消／退款紀錄。→ 關帳強制填寫差異原因；取消與退款留下完整稽核軌跡。"}, "ur_note": {"en": "✦ The core idea: research \"on-site selling\" as a product with real users — not just port the online flow onto a machine.", "zh": "✦ 核心理念：把「現場銷售」當成有真實使用者的產品來研究——而不是把線上流程硬搬到機器上。"}, "k4": {"en": "Solution · Product &amp; Flow Design", "zh": "解決方案 · 產品與流程設計"}, "h_sol": {"en": "Designed for the front line", "zh": "為第一線而設計"}, "p_sol": {"en": "I defined the flows below from the research insights and shaped them together with the designer, who owned the visual interface.", "zh": "我依研究洞察定義以下流程，並與負責視覺介面的設計師一起打磨。"}, "s_h1": {"en": "A POS flow designed for speed", "zh": "為速度設計的 POS 流程"}, "s_p1": {"en": "Because counter staff sell under queue pressure, the interface optimizes for efficiency and error prevention:", "zh": "因為櫃檯人員在排隊壓力下作業，介面以效率與防呆為優先："}, "sl1": {"en": "<b>Smart date / session selection:</b> defaults to today's sessions; a \"next session date\" button jumps straight to the next date that actually has sessions (not just tomorrow); a 3-month calendar picker; horizontal swiping when there are many sessions; sessions past their cutoff are hidden automatically to prevent mis-selling.", "zh": "<b>智慧日期／場次選擇：</b>預設今日場次；「下個有場次的日期」按鈕直接跳到真正有場次的日期（不只是明天）；三個月日曆選擇器；場次多時可水平滑動；過了截止時間的場次自動隱藏，避免售錯。"}, "sl2": {"en": "<b>Intuitive cart:</b> adjust quantity with +/− or tap the number field to type directly; \"remove\" only appears after decrementing to 1, preventing accidental deletion; the cart summary groups identical trips together for a clean final check with the customer.", "zh": "<b>直覺購物車：</b>用 +/− 調整數量，或點數字欄直接輸入；減到 1 後才出現「移除」，避免誤刪；購物車彙整把相同行程合併，方便與顧客做最後確認。"}, "sl3": {"en": "<b>Easy cash handling:</b> type the tendered amount on a number pad and change is auto-calculated; \"Confirm\" stays disabled until tendered ≥ amount due — preventing payment errors at the interface level.", "zh": "<b>輕鬆現金處理：</b>在數字鍵盤輸入收受金額，自動算出找零；在收受金額 ≥ 應付金額前，「確認」維持停用——從介面層級防止收款錯誤。"}, "sl4": {"en": "<b>Flexible voucher printing:</b> print on the spot, or choose \"print later\" and reprint from order lookup.", "zh": "<b>彈性憑證列印：</b>當場列印，或選「稍後列印」，再從訂單查詢補印。"}, "s_h2": {"en": "A Kiosk flow designed for zero learning", "zh": "為零學習設計的 Kiosk 流程"}, "s_p2": {"en": "The kiosk faces one-time visitors with no one to help, so the flow is deliberately linear and self-explanatory — letting travelers of any age or language complete purchase and payment on their own and take pressure off the counter.", "zh": "自助機面對的是無人協助、只用一次的旅客，因此流程刻意線性且不言自明——讓任何年齡或語言的旅客都能自行完成購票與付款，分擔櫃檯壓力。"}, "s_h3": {"en": "Rigorous fail-safes (a UX design focus)", "zh": "縝密的防呆設計（UX 重點）"}, "fs1": {"en": "<b>Daily cash reconciliation &amp; closing:</b> count cash by denomination, auto-calculate, and compare against the expected drawer total — any mismatch requires a written reason before closing, with manager-level authentication.", "zh": "<b>每日現金對帳與關帳：</b>逐面額點收現金、自動計算，並與應有金額比對——若有差異，須填寫原因並經主管權限驗證才能關帳。"}, "fs2": {"en": "<b>Cancel and refund separated:</b> two independent, non-interfering actions; every record, reason and internal note flows back to the Admin back office, so accounting stays traceable.", "zh": "<b>取消與退款分流：</b>兩個獨立、互不干擾的動作；每筆紀錄、原因與內部備註都回傳 Admin 後台，讓帳務可追溯。"}, "fs3": {"en": "<b>Pre-checkout auto-validation:</b> the cart checks inventory and minimum-order limits before payment; an authorized user can still force-create when needed — balancing flexibility and control.", "zh": "<b>結帳前自動檢核：</b>付款前購物車先檢查庫存與最低訂購限制；必要時有權限者仍可強制下單——兼顧彈性與控管。"}, "fs4": {"en": "<b>Seat-hold mechanism:</b> orders hold inventory for 10 minutes after checkout and auto-expire if unpaid, so stock isn't locked up.", "zh": "<b>保留機制：</b>結帳後訂單保留庫存 10 分鐘，未付款則自動失效，避免庫存被卡住。"}, "s_h4": {"en": "Standardized global rollout", "zh": "標準化的全球導入"}, "s_p4": {"en": "I personally wrote the product manuals and SOPs — documenting POS / Kiosk setup, selling, lookup, refund and closing — so teams and clients across regions could onboard with a consistent process and lower coordination cost.", "zh": "我親自撰寫產品手冊與 SOP——記錄 POS／Kiosk 的設定、銷售、查詢、退款與關帳——讓各地團隊與客戶能以一致流程上手，降低溝通成本。"}, "k5": {"en": "Highlights", "zh": "亮點"}, "h_hi": {"en": "What made this hard — and interesting", "zh": "困難之處——也是有趣之處"}, "hi1h": {"en": "Research-driven, not gut-driven", "zh": "研究驅動，而非直覺驅動"}, "hi1p": {"en": "With no ticket machine to copy, I leaned on interviews, competitive research (self-checkout / self-ordering kiosks) and interactive prototype testing to pin down the gap between a trained cashier who needs speed and a one-time visitor who needs zero learning — then handed those insights to the designer to execute.", "zh": "沒有售票機可抄，我靠訪談、競品研究（自助結帳／自助點餐機）與互動原型測試，釐清「需要速度的受訓收銀員」與「需要零學習的一次性旅客」之間的落差——再把洞察交給設計師執行。"}, "hi2h": {"en": "0→1 software + hardware integration", "zh": "0→1 軟硬體整合"}, "hi2p": {"en": "Unlike a pure software feature, this project spanned hardware devices, payment, invoicing and the online system — aligning specs across multiple vendors, then distilling complex on-site operations into a clean, easy-to-operate terminal interface.", "zh": "不同於純軟體功能，這個專案橫跨硬體設備、支付、發票與線上系統——要對齊多家廠商的規格，再把複雜的現場營運收斂成乾淨、好操作的終端介面。"}, "hi3h": {"en": "Agile response to vendor risk", "zh": "對廠商風險的敏捷應變"}, "hi3p": {"en": "During 2021 production testing, the original invoice / payment hardware vendor underperformed. To win the Heping Island Geopark bid, the team decisively switched to a new hardware partner, re-ran compatibility development and integration testing — and still shipped on schedule.", "zh": "2021 年實測階段，原本的發票／支付硬體廠商表現不如預期。為了拿下和平島地質公園標案，團隊果斷換上新硬體夥伴，重做相容性開發與整合測試——仍如期上線。"}, "hi4h": {"en": "Treating on-site operations as a product", "zh": "把現場營運當成產品"}, "hi4p": {"en": "Many decisions — from cash-count discrepancy control to the separation of cancel and refund — came from understanding how front-line ticketing and accounting staff actually work, so the system doesn't just \"sell tickets\" but genuinely reduces on-site errors and reconciliation load.", "zh": "許多決策——從點鈔差異控管到取消與退款分流——都源自理解第一線售票與會計人員的真實作業，讓系統不只是「賣票」，而是真正降低現場錯誤與對帳負擔。"}, "k6": {"en": "Outcome", "zh": "成果"}, "h_out": {"en": "Results &amp; recognition", "zh": "成效與肯定"}, "o1": {"en": "<div class=\"n\">↓30%</div><div class=\"l\">operating cost for adopting venues</div>", "zh": "<div class=\"n\">↓30%</div><div class=\"l\">導入場館的營運成本</div>"}, "o2": {"en": "<div class=\"n\">3-in-1</div><div class=\"l\">online + POS + Kiosk deployed at Heping Island Geopark</div>", "zh": "<div class=\"n\">三合一</div><div class=\"l\">線上＋POS＋Kiosk 完整導入和平島地質公園</div>"}, "o3": {"en": "<div class=\"n\">2022</div><div class=\"l\">showcased at Future Commerce Expo \"KKday Future Park\"</div>", "zh": "<div class=\"n\">2022</div><div class=\"l\">於未來商務展「KKday 未來樂園」展出</div>"}, "ol1": {"en": "Helped venues unify online and offline — bringing on-site selling, payment and closing into one system, <b>cutting operating cost by ~30%</b>.", "zh": "協助場館整合線上線下——把現場銷售、付款與關帳收進同一套系統，<b>營運成本約降 30%</b>。"}, "ol2": {"en": "Full deployment case: <b>Heping Island Geopark</b> (online sales + POS + Kiosk).", "zh": "完整導入案例：<b>和平島地質公園</b>（線上銷售＋POS＋Kiosk）。"}, "ol3": {"en": "<b>Brand &amp; market exposure:</b> showcased at the 2022 Future Commerce Expo under the \"KKday Future Park\" theme and covered by LINE Travel and other media; in March 2024, Vice President Lai Ching-te experienced the digital ticketing during his visit to KKday's headquarters (<a href=\"https://youtu.be/oqvPj_kb7Is?si=GFP6KOwNmfFgfHji&amp;t=69\" target=\"_blank\" rel=\"noopener\">watch</a>).", "zh": "<b>品牌與市場曝光：</b>2022 年未來商務展以「KKday 未來樂園」主題展出，獲 LINE Travel 等媒體報導；2024 年 3 月賴清德副總統參訪 KKday 總部時體驗了數位售票（<a href=\"https://youtu.be/oqvPj_kb7Is?si=GFP6KOwNmfFgfHji&amp;t=69\" target=\"_blank\" rel=\"noopener\">觀看影片</a>）。"}, "out_note": {"en": "✦ The project also rode Rezio's broader momentum at the time — merchant adoption grew 350%+ in a single year, with 2M+ travelers served — and laid the foundation for the platform's expansion into physical venues.", "zh": "✦ 這個專案也搭上 Rezio 當時的整體動能——單年商家採用成長 350%+、服務 200 萬+ 旅客——並為平台跨入實體場館奠定基礎。"}, "k7": {"en": "Skills applied", "zh": "運用的能力"}, "c1": {"en": "User research (interviews · competitive study · prototype testing)", "zh": "使用者研究（訪談 · 競品研究 · 原型測試）"}, "c2": {"en": "Flow design (with a designer)", "zh": "流程設計（與設計師協作）"}, "c3": {"en": "Error-prevention design", "zh": "防呆設計"}, "c4": {"en": "0→1 product planning", "zh": "0→1 產品規劃"}, "c5": {"en": "Hardware / software integration PM", "zh": "軟硬體整合 PM"}, "c6": {"en": "Multi-vendor coordination", "zh": "多廠商協調"}, "c7": {"en": "Risk response &amp; replanning", "zh": "風險應變與重新規劃"}, "c8": {"en": "Product docs &amp; SOP standardization", "zh": "產品文件與 SOP 標準化"}, "foot": {"en": "© 2026 Janet Chen · 陳毓聆 — Rezio TIX case study", "zh": "© 2026 Janet Chen · 陳毓聆 — Rezio TIX 個案研究"}};
+  function applyLang(l){
+    document.documentElement.lang=(l==='zh'?'zh-Hant':'en');
+    document.querySelectorAll('[data-i18n]').forEach(el=>{const d=I18N[el.dataset.i18n];if(d&&d[l]!=null)el.innerHTML=d[l];});
+    const b=document.getElementById('csLang');if(b)b.textContent=(l==='en'?'中文':'English');
+  }
+  let LANG=(location.hash||'').replace('#','');
+  if(LANG!=='zh'&&LANG!=='en')LANG=localStorage.getItem('lang');
+  if(LANG!=='zh'&&LANG!=='en')LANG=((navigator.language||'').toLowerCase().indexOf('zh')===0)?'zh':'en';
+  const _b=document.getElementById('csLang');
+  if(_b)_b.addEventListener('click',()=>{LANG=(LANG==='en'?'zh':'en');localStorage.setItem('lang',LANG);applyLang(LANG);});
+  applyLang(LANG);
+</script>
+</body>
+</html>

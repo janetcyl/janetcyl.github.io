@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Order Dashboard — Pending Orders · Case Study · Janet Chen</title>
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iIzFmMmE1MiIvPjx0ZXh0IHg9IjYuNSIgeT0iMjMiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjZmZmIj5KPC90ZXh0PjxjaXJjbGUgY3g9IjI0IiBjeT0iMjIiIHI9IjMuNiIgZmlsbD0iIzE2YTQ3ZCIvPjwvc3ZnPg==" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Noto+Sans+TC:wght@500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#1f2a52; --navy-2:#26336b; --navy-deep:#141d3b;
+    --green:#16a47d; --green-soft:#34c79b; --green-tint:#e7f6f0;
+    --cream:#f5f7f4; --card:#ffffff; --ink:#222a3f; --ink-soft:#5d6678;
+    --line:#e3e8e6; --max:840px;
+    --red:#e2574c; --amber:#e6a417;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--ink);
+    font-family:'Inter','Noto Sans TC',-apple-system,system-ui,sans-serif;
+    line-height:1.7;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 30px;}
+  h1,h2,h3,h4{font-family:'Poppins','Noto Sans TC',sans-serif;letter-spacing:-.01em;}
+  a{color:var(--green);text-decoration:none;}
+
+  header{background:linear-gradient(150deg,#1f2a52 0%,#26336b 60%,#1d2a57 100%);
+    color:#fff;position:relative;overflow:hidden;padding:64px 0 56px;}
+  header .deco{position:absolute;inset:0;opacity:.14;pointer-events:none;}
+  header .wrap{position:relative;z-index:2;}
+  .tag{display:inline-flex;align-items:center;gap:8px;background:rgba(52,199,155,.16);
+    color:var(--green-soft);border:1px solid rgba(52,199,155,.4);border-radius:999px;
+    padding:6px 15px;font-size:.74rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-family:'Poppins';}
+  .cs-title{font-family:'Fraunces',Georgia,serif;font-weight:500;
+    font-size:clamp(2.1rem,5.4vw,3.3rem);line-height:1.08;margin:18px 0 0;}
+  .cs-title em{font-style:italic;color:var(--green-soft);}
+  .cs-sub{font-size:clamp(1.02rem,1.8vw,1.16rem);color:rgba(255,255,255,.84);max-width:640px;margin-top:18px;}
+  .meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:28px;font-size:.88rem;color:rgba(255,255,255,.78);}
+  .meta span{display:inline-flex;align-items:center;gap:8px;}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--green-soft);}
+  .impact-hero{display:inline-flex;align-items:center;gap:9px;margin-top:26px;background:var(--green);
+    color:#fff;font-family:'Poppins';font-weight:600;font-size:.96rem;border-radius:999px;padding:9px 20px;
+    box-shadow:0 12px 28px -14px rgba(22,164,125,.9);}
+
+  main{padding:54px 0 30px;}
+  .block{margin-bottom:48px;}
+  .kicker{font-family:'Poppins';font-weight:700;font-size:.78rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--green);display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .kicker::after{content:"";height:2px;flex:1;max-width:90px;background:linear-gradient(90deg,var(--green),transparent);border-radius:2px;}
+  .block h2{font-size:clamp(1.45rem,3vw,1.95rem);font-weight:800;color:var(--navy);line-height:1.18;margin-bottom:14px;}
+  .block h3{font-size:1.08rem;font-weight:700;color:var(--navy);margin:24px 0 8px;}
+  .block p{color:var(--ink-soft);font-size:1.02rem;margin-bottom:14px;}
+  .block p b,.block li b{color:var(--ink);font-weight:600;}
+  .block ul{list-style:none;margin:6px 0 14px;}
+  .block li{position:relative;padding-left:24px;margin-bottom:11px;color:var(--ink-soft);font-size:1.02rem;}
+  .block li::before{content:"";position:absolute;left:2px;top:11px;width:8px;height:8px;border-radius:50%;background:var(--green);}
+
+  .panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 30px;}
+  .panel.tint{background:var(--green-tint);border-color:#cfe6dd;}
+  .panel h3:first-child{margin-top:0;}
+
+  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:8px 0 4px;}
+  @media(max-width:640px){.stat-row{grid-template-columns:1fr;}}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;text-align:center;}
+  .stat .n{font-family:'Poppins';font-weight:800;font-size:1.9rem;color:var(--green);line-height:1;}
+  .stat .l{font-size:.9rem;color:var(--ink-soft);margin-top:8px;}
+
+  /* deadline flag legend */
+  .flags{display:flex;flex-wrap:wrap;gap:12px;margin:6px 0 4px;}
+  .flag{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);
+    border-radius:12px;padding:11px 16px;font-size:.92rem;color:var(--ink-soft);}
+  .flag i{width:12px;height:12px;border-radius:4px;display:inline-block;}
+  .flag .red{background:var(--red);} .flag .amber{background:var(--amber);}
+  .flag .blank{background:#fff;border:1.5px solid var(--line);}
+
+  .note{display:flex;gap:12px;align-items:flex-start;background:var(--green-tint);
+    border-left:4px solid var(--green);border-radius:0 12px 12px 0;padding:15px 20px;color:#0e6e54;font-size:.97rem;}
+
+  .skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:6px;}
+  .chip{background:#eef1ef;border:1px solid var(--line);border-radius:999px;padding:7px 15px;
+    font-size:.86rem;color:var(--navy);font-weight:500;}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--ink-soft);font-size:.84rem;text-align:center;}
+  .cs-lang{position:absolute;top:20px;right:24px;z-index:5;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.45);color:#fff;font-family:'Poppins';font-weight:600;font-size:.8rem;letter-spacing:.04em;border-radius:999px;padding:6px 14px;cursor:pointer;transition:.2s;}
+  .cs-lang:hover{background:var(--green);border-color:var(--green);}
+</style>
+</head>
+<body>
+
+<header>
+  <svg class="deco" viewBox="0 0 1200 420" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#9fd9c5" stroke-width="2">
+      <rect x="900" y="70" width="230" height="120" rx="10"/>
+      <line x1="900" y1="104" x2="1130" y2="104"/>
+      <rect x="918" y="124" width="120" height="10" rx="5"/>
+      <rect x="918" y="146" width="180" height="8" rx="4"/>
+      <rect x="918" y="240" width="230" height="44" rx="10"/>
+      <rect x="918" y="300" width="230" height="44" rx="10"/>
+      <circle cx="1115" cy="262" r="6"/><circle cx="1115" cy="322" r="6"/>
+    </g>
+  </svg>
+  <button id="csLang" class="cs-lang" type="button">中文</button>
+  <div class="wrap">
+    <span class="tag" data-i18n="tag">Enterprise SaaS · Performance &amp; UX</span>
+    <h1 class="cs-title" data-i18n="title">Order Dashboard —<br/><em>Pending Orders</em></h1>
+    <p class="cs-sub" data-i18n="sub">A daily command center for merchants' order-processing staff — rebuilt to stay fast and clear even for mega-suppliers handling tens of thousands of orders.</p>
+    <div class="meta">
+      <span data-i18n="m1"><i class="dot"></i> Role: Product Manager</span>
+      <span data-i18n="m2"><i class="dot"></i> Rezio (a KKday company)</span>
+      <span data-i18n="m3"><i class="dot"></i> Web · mobile web · app</span>
+    </div>
+    <div class="impact-hero" data-i18n="impact">↓ 50%+ order query time</div>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <section class="block">
+    <div class="kicker" data-i18n="k1">Context &amp; Problem</div>
+    <h2 data-i18n="h_problem">A sales dashboard, when staff needed a to-do list</h2>
+    <p data-i18n="p_problem1">Rezio's original "My Home" dashboard surfaced sales and redemption statistics. But the people who process orders every day needed a different view: <b>what needs manual action right now</b>, and how much of it there is — so they could clear the work before it became a problem.</p>
+    <p data-i18n="p_problem2">The pain sharpened at scale. Two years after launch, mega-suppliers were straining the order list:</p>
+    <div class="stat-row">
+      <div class="stat" data-i18n="st1"><div class="n">32k</div><div class="l">orders — Nikko Toshogu</div></div>
+      <div class="stat" data-i18n="st2"><div class="n">23k</div><div class="l">orders — Asahiyama Zoo</div></div>
+      <div class="stat" data-i18n="st3"><div class="n">48–54s</div><div class="l">to load the order list</div></div>
+    </div>
+    <p data-i18n="p_problem3">For high-volume suppliers like Nikko Toshogu, Asahiyama Zoo, HIS and Sky Walker Yachts, a list that took the better part of a minute to load made daily order processing genuinely painful.</p>
+  </section>
+
+  <section class="block">
+    <div class="kicker" data-i18n="k2">Goal</div>
+    <h2 data-i18n="h_goal">Fast, prioritized, action-first — at any scale</h2>
+    <p data-i18n="p_goal">Create a dedicated <b>pending-orders dashboard</b> that lets staff instantly grasp order status, view lists and details by category, and act on orders directly — and that <b>stays responsive even at tens of thousands of orders</b>.</p>
+  </section>
+
+  <section class="block">
+    <div class="kicker" data-i18n="k3">Solution</div>
+    <h2 data-i18n="h_sol">From "viewing data" to "taking action"</h2>
+
+    <h3 data-i18n="h_sol1">An action-first layout</h3>
+    <p data-i18n="p_sol1">Three zones — <b>Orders, Registrations and Problem orders</b> — each with a running total, plus <b>18 quick-filter categories</b> (e.g. past confirmation deadline, needs confirming within a day, voucher to send, overdue unconfirmed). Staff click a category and immediately get the matching orders.</p>
+
+    <h3 data-i18n="h_sol2">Deadline color flags</h3>
+    <p data-i18n="p_sol2">Each order card carries a deadline flag in the bottom-right corner, so urgency is visible at a glance without reading a single date:</p>
+    <div class="flags">
+      <span class="flag" data-i18n="fl1"><i class="red"></i> &lt; 24 hr or overdue — red</span>
+      <span class="flag" data-i18n="fl2"><i class="amber"></i> 3–7 days — yellow</span>
+      <span class="flag" data-i18n="fl3"><i class="blank"></i> &gt; 7 days — blank</span>
+    </div>
+
+    <h3 data-i18n="h_sol3">Continuous processing</h3>
+    <p data-i18n="p_sol3">Order details open in an embedded pop-up with a <b>"Next" button</b>, so staff can work through a batch back-to-back without leaving the page. The list keeps the snapshot captured when opened, so the sequence doesn't jump around mid-task.</p>
+
+    <h3 data-i18n="h_sol4">Performance — defined the requirements, engineering built it</h3>
+    <ul>
+      <li data-i18n="li1"><b>Time-window limits per category</b> (e.g. general orders show only from today onward, or those created within the last ~90 days) to shrink the volume of data loaded.</li>
+      <li data-i18n="li2"><b>Infinite scroll</b> — load the next 20 orders as the user scrolls, instead of fetching everything up front.</li>
+      <li data-i18n="li3"><b>Optimized list UI and search</b>, which together cut order query time by <b>50%+</b>.</li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <div class="kicker" data-i18n="k4">Highlights</div>
+    <h2 data-i18n="h_hi">Why it worked</h2>
+    <div class="panel tint">
+      <h3 data-i18n="hi1h">Reframing the dashboard around the job</h3>
+      <p data-i18n="hi1p">The biggest move wasn't visual — it was deciding that order-processing staff need an action queue, not a sales report, and designing the whole surface around that single job.</p>
+      <h3 data-i18n="hi2h">Designing for scale without throwing hardware at it</h3>
+      <p data-i18n="hi2p">The performance win came from smart product rules — sensible time windows and paginated loading — that I defined as requirements, rather than simply asking for more infrastructure.</p>
+      <h3 data-i18n="hi3h">Reducing cognitive load</h3>
+      <p data-i18n="hi3p">Color-coded deadlines and the continuous-processing pop-up turn a tedious, error-prone chore into a fast, low-friction flow.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="kicker" data-i18n="k5">Outcome</div>
+    <h2 data-i18n="h_out">Results</h2>
+    <div class="stat-row">
+      <div class="stat" data-i18n="o1"><div class="n">↓50%+</div><div class="l">order query time</div></div>
+      <div class="stat" data-i18n="o2"><div class="n">18</div><div class="l">quick-filter categories across 3 zones</div></div>
+      <div class="stat" data-i18n="o3"><div class="n">10k+</div><div class="l">orders handled smoothly per mega-supplier</div></div>
+    </div>
+    <div class="note" data-i18n="note">✦ A slow, manual order list became a prioritized, action-oriented workspace that scales to the platform's largest suppliers.</div>
+  </section>
+
+  <section class="block">
+    <div class="kicker" data-i18n="k6">Skills applied</div>
+    <div class="skills">
+      <span class="chip" data-i18n="c1">Cross-device product planning</span>
+      <span class="chip" data-i18n="c2">Workflow &amp; edge-case design</span>
+      <span class="chip" data-i18n="c3">Performance requirement definition</span>
+      <span class="chip" data-i18n="c4">UX for high-volume operations</span>
+      <span class="chip" data-i18n="c5">Cross-functional collaboration</span>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer data-i18n="foot">© 2026 Janet Chen · 陳毓聆 — Order Dashboard case study</footer>
+
+
+<script>
+  const I18N={"tag": {"en": "Enterprise SaaS · Performance &amp; UX", "zh": "企業 SaaS · 效能 & UX"}, "title": {"en": "Order Dashboard —<br/><em>Pending Orders</em>", "zh": "待處理訂單<br/><em>儀表板</em>"}, "sub": {"en": "A daily command center for merchants' order-processing staff — rebuilt to stay fast and clear even for mega-suppliers handling tens of thousands of orders.", "zh": "為商家理單人員打造的每日作戰中心——即使面對破萬訂單的巨型供應商，也能保持快速與清晰。"}, "m1": {"en": "<i class=\"dot\"></i> Role: Product Manager", "zh": "<i class=\"dot\"></i> 角色：產品經理"}, "m2": {"en": "<i class=\"dot\"></i> Rezio (a KKday company)", "zh": "<i class=\"dot\"></i> Rezio（KKday 旗下）"}, "m3": {"en": "<i class=\"dot\"></i> Web · mobile web · app", "zh": "<i class=\"dot\"></i> Web · 行動網頁 · App"}, "impact": {"en": "↓ 50%+ order query time", "zh": "↓ 50%+ 訂單查詢時間"}, "k1": {"en": "Context &amp; Problem", "zh": "背景與問題"}, "h_problem": {"en": "A sales dashboard, when staff needed a to-do list", "zh": "當員工需要的是待辦清單，系統給的卻是銷售儀表板"}, "p_problem1": {"en": "Rezio's original \"My Home\" dashboard surfaced sales and redemption statistics. But the people who process orders every day needed a different view: <b>what needs manual action right now</b>, and how much of it there is — so they could clear the work before it became a problem.", "zh": "Rezio 原本的「My Home」儀表板呈現的是銷售與核銷統計。但每天理單的人需要另一種視角：<b>現在有哪些需要人工處理</b>、總共有多少——好在問題擴大前清完。"}, "p_problem2": {"en": "The pain sharpened at scale. Two years after launch, mega-suppliers were straining the order list:", "zh": "規模一大，痛點更明顯。上線兩年後，巨型供應商已讓訂單列表不堪負荷："}, "st1": {"en": "<div class=\"n\">32k</div><div class=\"l\">orders — Nikko Toshogu</div>", "zh": "<div class=\"n\">32k</div><div class=\"l\">筆訂單 — 日光東照宮</div>"}, "st2": {"en": "<div class=\"n\">23k</div><div class=\"l\">orders — Asahiyama Zoo</div>", "zh": "<div class=\"n\">23k</div><div class=\"l\">筆訂單 — 旭山動物園</div>"}, "st3": {"en": "<div class=\"n\">48–54s</div><div class=\"l\">to load the order list</div>", "zh": "<div class=\"n\">48–54s</div><div class=\"l\">才載入完訂單列表</div>"}, "p_problem3": {"en": "For high-volume suppliers like Nikko Toshogu, Asahiyama Zoo, HIS and Sky Walker Yachts, a list that took the better part of a minute to load made daily order processing genuinely painful.", "zh": "對日光東照宮、旭山動物園、HIS、Sky Walker Yachts 這類高量供應商來說，一份要花將近一分鐘才載入的列表，讓每日理單相當痛苦。"}, "k2": {"en": "Goal", "zh": "目標"}, "h_goal": {"en": "Fast, prioritized, action-first — at any scale", "zh": "快速、分優先、以行動為先——任何規模都適用"}, "p_goal": {"en": "Create a dedicated <b>pending-orders dashboard</b> that lets staff instantly grasp order status, view lists and details by category, and act on orders directly — and that <b>stays responsive even at tens of thousands of orders</b>.", "zh": "打造專屬的<b>待處理訂單儀表板</b>，讓員工一眼掌握訂單狀態、依分類查看清單與明細、並直接對訂單採取行動，且<b>在數萬筆訂單下依然流暢</b>。"}, "k3": {"en": "Solution", "zh": "解決方案"}, "h_sol": {"en": "From \"viewing data\" to \"taking action\"", "zh": "從「看數據」到「採取行動」"}, "h_sol1": {"en": "An action-first layout", "zh": "以行動為先的版面"}, "p_sol1": {"en": "Three zones — <b>Orders, Registrations and Problem orders</b> — each with a running total, plus <b>18 quick-filter categories</b> (e.g. past confirmation deadline, needs confirming within a day, voucher to send, overdue unconfirmed). Staff click a category and immediately get the matching orders.", "zh": "分成三大區塊——<b>訂單、報名單、問題訂單</b>——各自顯示總計，再加上 <b>18 種快捷分類</b>（如：超過確認期限、一天內需確認、待發送憑證、逾期未確認）。員工點一下分類，立刻拿到對應訂單。"}, "h_sol2": {"en": "Deadline color flags", "zh": "期限顏色標籤"}, "p_sol2": {"en": "Each order card carries a deadline flag in the bottom-right corner, so urgency is visible at a glance without reading a single date:", "zh": "每張訂單卡右下角都有期限標籤，不必讀任何日期就能一眼看出急迫程度："}, "fl1": {"en": "<i class=\"red\"></i> &lt; 24 hr or overdue — red", "zh": "<i class=\"red\"></i> < 24 小時或逾期 — 紅"}, "fl2": {"en": "<i class=\"amber\"></i> 3–7 days — yellow", "zh": "<i class=\"amber\"></i> 3–7 天 — 黃"}, "fl3": {"en": "<i class=\"blank\"></i> &gt; 7 days — blank", "zh": "<i class=\"blank\"></i> > 7 天 — 留白"}, "h_sol3": {"en": "Continuous processing", "zh": "連續處理"}, "p_sol3": {"en": "Order details open in an embedded pop-up with a <b>\"Next\" button</b>, so staff can work through a batch back-to-back without leaving the page. The list keeps the snapshot captured when opened, so the sequence doesn't jump around mid-task.", "zh": "訂單明細以內嵌彈窗開啟，並有 <b>「下一筆」按鈕</b>，讓員工一筆接一筆連續處理而不離開頁面。列表會保留開啟當下的快照，處理過程中順序不會亂跳。"}, "h_sol4": {"en": "Performance — defined the requirements, engineering built it", "zh": "效能——我定義需求，工程實作"}, "li1": {"en": "<b>Time-window limits per category</b> (e.g. general orders show only from today onward, or those created within the last ~90 days) to shrink the volume of data loaded.", "zh": "<b>各分類加時間範圍限制</b>（例如一般訂單只顯示今天起、或近 90 天內建立的），縮小載入的資料量。"}, "li2": {"en": "<b>Infinite scroll</b> — load the next 20 orders as the user scrolls, instead of fetching everything up front.", "zh": "<b>無限捲動</b>——隨捲動載入下 20 筆，而非一次全撈。"}, "li3": {"en": "<b>Optimized list UI and search</b>, which together cut order query time by <b>50%+</b>.", "zh": "<b>優化列表 UI 與搜尋</b>，合計讓訂單查詢時間縮短 <b>50%+</b>。"}, "k4": {"en": "Highlights", "zh": "亮點"}, "h_hi": {"en": "Why it worked", "zh": "為什麼有效"}, "hi1h": {"en": "Reframing the dashboard around the job", "zh": "圍繞工作本質重新定義儀表板"}, "hi1p": {"en": "The biggest move wasn't visual — it was deciding that order-processing staff need an action queue, not a sales report, and designing the whole surface around that single job.", "zh": "最關鍵的不是視覺——而是認定理單人員需要的是「行動佇列」而非銷售報表，並圍繞這個單一任務設計整個畫面。"}, "hi2h": {"en": "Designing for scale without throwing hardware at it", "zh": "不靠加硬體也能撐住規模"}, "hi2p": {"en": "The performance win came from smart product rules — sensible time windows and paginated loading — that I defined as requirements, rather than simply asking for more infrastructure.", "zh": "效能的提升來自聰明的產品規則——合理的時間範圍與分頁載入——這些是我定義的需求，而非一味要求更多基礎設施。"}, "hi3h": {"en": "Reducing cognitive load", "zh": "降低認知負擔"}, "hi3p": {"en": "Color-coded deadlines and the continuous-processing pop-up turn a tedious, error-prone chore into a fast, low-friction flow.", "zh": "用顏色標示期限、加上連續處理彈窗，把繁瑣易錯的雜務變成快速、低摩擦的流程。"}, "k5": {"en": "Outcome", "zh": "成果"}, "h_out": {"en": "Results", "zh": "成效"}, "o1": {"en": "<div class=\"n\">↓50%+</div><div class=\"l\">order query time</div>", "zh": "<div class=\"n\">↓50%+</div><div class=\"l\">訂單查詢時間</div>"}, "o2": {"en": "<div class=\"n\">18</div><div class=\"l\">quick-filter categories across 3 zones</div>", "zh": "<div class=\"n\">18</div><div class=\"l\">種快捷分類，橫跨 3 大區</div>"}, "o3": {"en": "<div class=\"n\">10k+</div><div class=\"l\">orders handled smoothly per mega-supplier</div>", "zh": "<div class=\"n\">10k+</div><div class=\"l\">巨型供應商也能順暢處理的訂單量</div>"}, "note": {"en": "✦ A slow, manual order list became a prioritized, action-oriented workspace that scales to the platform's largest suppliers.", "zh": "✦ 一份緩慢、人工的訂單列表，變成能分優先、以行動為導向、並能撐起平台最大供應商的工作空間。"}, "k6": {"en": "Skills applied", "zh": "運用的能力"}, "c1": {"en": "Cross-device product planning", "zh": "跨裝置產品規劃"}, "c2": {"en": "Workflow &amp; edge-case design", "zh": "流程與極端情境設計"}, "c3": {"en": "Performance requirement definition", "zh": "效能需求定義"}, "c4": {"en": "UX for high-volume operations", "zh": "高量營運的 UX"}, "c5": {"en": "Cross-functional collaboration", "zh": "跨職能協作"}, "foot": {"en": "© 2026 Janet Chen · 陳毓聆 — Order Dashboard case study", "zh": "© 2026 Janet Chen · 陳毓聆 — 待處理訂單儀表板 個案研究"}};
+  function applyLang(l){
+    document.documentElement.lang=(l==='zh'?'zh-Hant':'en');
+    document.querySelectorAll('[data-i18n]').forEach(el=>{const d=I18N[el.dataset.i18n];if(d&&d[l]!=null)el.innerHTML=d[l];});
+    const b=document.getElementById('csLang');if(b)b.textContent=(l==='en'?'中文':'English');
+  }
+  let LANG=(location.hash||'').replace('#','');
+  if(LANG!=='zh'&&LANG!=='en')LANG=localStorage.getItem('lang');
+  if(LANG!=='zh'&&LANG!=='en')LANG=((navigator.language||'').toLowerCase().indexOf('zh')===0)?'zh':'en';
+  const _b=document.getElementById('csLang');
+  if(_b)_b.addEventListener('click',()=>{LANG=(LANG==='en'?'zh':'en');localStorage.setItem('lang',LANG);applyLang(LANG);});
+  applyLang(LANG);
+</script>
+</body>
+</html>

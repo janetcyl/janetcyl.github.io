@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cross-border Payments — PayPal · Case Study · Janet Chen</title>
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iIzFmMmE1MiIvPjx0ZXh0IHg9IjYuNSIgeT0iMjMiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjZmZmIj5KPC90ZXh0PjxjaXJjbGUgY3g9IjI0IiBjeT0iMjIiIHI9IjMuNiIgZmlsbD0iIzE2YTQ3ZCIvPjwvc3ZnPg==" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Noto+Sans+TC:wght@500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#1f2a52; --navy-2:#26336b; --navy-deep:#141d3b;
+    --green:#16a47d; --green-soft:#34c79b; --green-tint:#e7f6f0;
+    --cream:#f5f7f4; --card:#ffffff; --ink:#222a3f; --ink-soft:#5d6678;
+    --line:#e3e8e6; --max:840px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--ink);
+    font-family:'Inter','Noto Sans TC',-apple-system,system-ui,sans-serif;
+    line-height:1.7;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 30px;}
+  h1,h2,h3,h4{font-family:'Poppins','Noto Sans TC',sans-serif;letter-spacing:-.01em;}
+  a{color:var(--green);text-decoration:none;}
+
+  header{background:linear-gradient(150deg,#1f2a52 0%,#26336b 60%,#1d2a57 100%);
+    color:#fff;position:relative;overflow:hidden;padding:64px 0 56px;}
+  header .deco{position:absolute;inset:0;opacity:.14;pointer-events:none;}
+  header .wrap{position:relative;z-index:2;}
+  .tag{display:inline-flex;align-items:center;gap:8px;background:rgba(52,199,155,.16);
+    color:var(--green-soft);border:1px solid rgba(52,199,155,.4);border-radius:999px;
+    padding:6px 15px;font-size:.74rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-family:'Poppins';}
+  .cs-title{font-family:'Fraunces',Georgia,serif;font-weight:500;
+    font-size:clamp(2.1rem,5.4vw,3.3rem);line-height:1.08;margin:18px 0 0;}
+  .cs-title em{font-style:italic;color:var(--green-soft);}
+  .cs-sub{font-size:clamp(1.02rem,1.8vw,1.16rem);color:rgba(255,255,255,.84);max-width:640px;margin-top:18px;}
+  .meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:28px;font-size:.88rem;color:rgba(255,255,255,.78);}
+  .meta span{display:inline-flex;align-items:center;gap:8px;}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--green-soft);}
+  .impact-hero{display:inline-flex;align-items:center;gap:9px;margin-top:26px;background:var(--green);
+    color:#fff;font-family:'Poppins';font-weight:600;font-size:.96rem;border-radius:999px;padding:9px 20px;
+    box-shadow:0 12px 28px -14px rgba(22,164,125,.9);}
+
+  main{padding:54px 0 30px;}
+  .block{margin-bottom:48px;}
+  .kicker{font-family:'Poppins';font-weight:700;font-size:.78rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--green);display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .kicker::after{content:"";height:2px;flex:1;max-width:90px;background:linear-gradient(90deg,var(--green),transparent);border-radius:2px;}
+  .block h2{font-size:clamp(1.45rem,3vw,1.95rem);font-weight:800;color:var(--navy);line-height:1.18;margin-bottom:14px;}
+  .block h3{font-size:1.08rem;font-weight:700;color:var(--navy);margin:24px 0 8px;}
+  .block p{color:var(--ink-soft);font-size:1.02rem;margin-bottom:14px;}
+  .block p b,.block li b{color:var(--ink);font-weight:600;}
+  .block ul{list-style:none;margin:6px 0 14px;}
+  .block li{position:relative;padding-left:24px;margin-bottom:11px;color:var(--ink-soft);font-size:1.02rem;}
+  .block li::before{content:"";position:absolute;left:2px;top:11px;width:8px;height:8px;border-radius:50%;background:var(--green);}
+
+  .panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 30px;}
+  .panel.tint{background:var(--green-tint);border-color:#cfe6dd;}
+  .panel h3:first-child{margin-top:0;}
+
+  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:8px 0 4px;}
+  @media(max-width:640px){.stat-row{grid-template-columns:1fr;}}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;text-align:center;}
+  .stat .n{font-family:'Poppins';font-weight:800;font-size:1.9rem;color:var(--green);line-height:1;}
+  .stat .l{font-size:.9rem;color:var(--ink-soft);margin-top:8px;}
+
+  /* API-spec visual */
+  .spec{background:var(--navy-deep);border-radius:16px;padding:22px 24px;margin:10px 0 4px;
+    font-family:'JetBrains Mono',monospace;font-size:.86rem;color:#cfe0d8;overflow-x:auto;}
+  .spec .doc{color:var(--green-soft);font-weight:500;}
+  .spec .arrow{color:#6f7ba0;}
+  .spec .k{color:#9fd9c5;} .spec .v{color:#ffd9a0;}
+  .spec-line{white-space:nowrap;}
+  .ccy{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0 4px;}
+  .ccy span{background:#eef1ef;border:1px solid var(--line);border-radius:8px;padding:5px 11px;
+    font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--navy);font-weight:500;}
+
+  .note{display:flex;gap:12px;align-items:flex-start;background:var(--green-tint);
+    border-left:4px solid var(--green);border-radius:0 12px 12px 0;padding:15px 20px;color:#0e6e54;font-size:.97rem;}
+
+  .skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:6px;}
+  .chip{background:#eef1ef;border:1px solid var(--line);border-radius:999px;padding:7px 15px;
+    font-size:.86rem;color:var(--navy);font-weight:500;}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--ink-soft);font-size:.84rem;text-align:center;}
+  .cs-lang{position:absolute;top:20px;right:24px;z-index:5;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.45);color:#fff;font-family:'Poppins';font-weight:600;font-size:.8rem;letter-spacing:.04em;border-radius:999px;padding:6px 14px;cursor:pointer;transition:.2s;}
+  .cs-lang:hover{background:var(--green);border-color:var(--green);}
+</style>
+</head>
+<body>
+
+<header>
+  <svg class="deco" viewBox="0 0 1200 420" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#9fd9c5" stroke-width="2">
+      <circle cx="980" cy="150" r="48"/>
+      <path d="M980 102 v96 M932 150 h96" stroke-dasharray="5 7"/>
+      <rect x="1050" y="240" width="110" height="68" rx="10"/>
+      <rect x="1050" y="262" width="110" height="10"/>
+      <rect x="900" y="270" width="60" height="40" rx="6"/>
+      <text x="930" y="298" font-size="26" fill="#9fd9c5" stroke="none" text-anchor="middle">$</text>
+    </g>
+  </svg>
+  <button id="csLang" class="cs-lang" type="button">中文</button>
+  <div class="wrap">
+    <span class="tag" data-i18n="tag">FinTech · Cross-border · SEA</span>
+    <h1 class="cs-title" data-i18n="title">Cross-border<br/>Payments — <em>PayPal</em></h1>
+    <p class="cs-sub" data-i18n="sub">Led the PayPal integration so travel-experience merchants could take payments from overseas visitors — by reading the payment API docs end to end and turning them into fail-safe specs.</p>
+    <div class="meta">
+      <span data-i18n="m1"><i class="dot"></i> Role: Product Manager (owner)</span>
+      <span><i class="dot"></i> 2025</span>
+      <span data-i18n="m3"><i class="dot"></i> Rezio (a KKday company)</span>
+    </div>
+    <div class="impact-hero" data-i18n="impact">↑ 15%+ expected order completion rate</div>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <section class="block">
+    <div class="kicker" data-i18n="k1">Context &amp; Problem</div>
+    <h2 data-i18n="h_prob">Local-only payments couldn't serve overseas travelers</h2>
+    <p data-i18n="p_prob">Rezio's merchants are mostly small and mid-sized travel-experience operators. As international travel rebounded and cross-border bookings grew, their local-first payment setup couldn't serve overseas visitors:</p>
+    <ul>
+      <li data-i18n="pl1">Target markets — the Philippines, Thailand, Indonesia and the rest of Southeast Asia — have <b>different payment habits and currencies</b>, calling for multi-currency checkout and a way for visitors <b>without a PayPal account</b> to pay by card.</li>
+      <li data-i18n="pl2">Cross-border payments involve fees, currency conversion, fee-splitting, refund windows and disputes — miss any one and you get <b>dropped orders or books that don't reconcile</b>.</li>
+      <li data-i18n="pl3">Rezio's own data: adding online payment lifts the average <b>order-completion rate by 15%+</b> — payment convenience is the conversion lever.</li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <div class="kicker" data-i18n="k2">Goal</div>
+    <h2 data-i18n="h_goal">Make PayPal work end to end</h2>
+    <p data-i18n="p_goal">Integrate PayPal into Rezio to deliver:</p>
+    <ul>
+      <li data-i18n="gl1">Multi-currency checkout (USD, JPY, TWD, PHP, THB, SGD and more — 13 currencies).</li>
+      <li data-i18n="gl2">Pay with a PayPal account, or by credit card directly (no account needed).</li>
+      <li data-i18n="gl3">A complete, traceable fee-split, refund and reconciliation mechanism.</li>
+      <li data-i18n="gl4">A fail-safe flow that doesn't drop orders even when the gateway disconnects or responses lag.</li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <div class="kicker" data-i18n="k3">Solution</div>
+    <h2 data-i18n="h_sol">A non-technical PM who reads the API</h2>
+
+    <h3 data-i18n="h_sol1">Reading the docs, writing the spec — the heart of this project</h3>
+    <p data-i18n="p_sol1">I'm not from a technical background, yet I read PayPal's official API documentation directly — <b>REST API v2, Multiparty Payments, the Partner Referral API and Order API v2</b> — and independently listed the send/receive parameters for each call, turning them into specs engineers could build from straight away:</p>
+    <div class="spec">
+      <div class="spec-line"><span class="doc">Order API v2</span> <span class="arrow">→</span> create order <span class="arrow">·</span> <span class="k">purchase_units</span>:</div>
+      <div class="spec-line">&nbsp;&nbsp;<span class="k">category</span> = <span class="v">"DIGITAL_GOODS"</span> &nbsp; <span class="k">quantity</span> = <span class="v">1</span> &nbsp; …</div>
+    </div>
+
+    <h3 data-i18n="h_sol2">Making the fee-split logic clear</h3>
+    <p data-i18n="p_sol2">I mapped and documented the whole money trail — from <code>gross_amount</code> → <code>platform_fees</code> → <code>paypal_fee</code> → <code>net_amount</code> → <code>exchange_rate</code> → <code>receivable_amount</code> — and defined the difference between "collect everything then convert to the primary currency" versus "receive in that currency without conversion," so merchants understand exactly how each payout is calculated.</p>
+
+    <h3 data-i18n="h_sol3">Designing fail-safes for the edge cases</h3>
+    <ul>
+      <li data-i18n="sl1"><b>Reconciliation / re-post mechanism:</b> Sandbox negative testing revealed that an <code>HTTP 201</code> with status <code>PENDING</code> must be treated as <b>not complete</b> — wait for the Webhook, then write the order — so success is never mis-read and no order is dropped.</li>
+      <li data-i18n="sl2"><b>Error-code translation:</b> mapped PayPal's error codes into human-readable prompts with default failure copy.</li>
+      <li data-i18n="sl3"><b>Passing tracking context:</b> used <code>SetTransactionContext</code> to send <code>TRACKING_ID</code>, payer email and session date for reconciliation — and, recognizing that buyers checkout without registering, deliberately omitted the member-account fields.</li>
+    </ul>
+
+    <h3 data-i18n="h_sol4">Rigorous refund &amp; reconciliation rules</h3>
+    <ul>
+      <li data-i18n="rl1"><b>Refunds:</b> 0–179 days from the transaction date, straight from the Rezio back office, with no extra fee (the original fee isn't returned); past 180 days, disputes go through PayPal's Resolution Center.</li>
+      <li data-i18n="rl2"><b>Reconciliation:</b> payer email and an itemized fee breakdown appear in the order's billing record, so merchants can match it against their PayPal back office.</li>
+    </ul>
+
+    <h3 data-i18n="h_sol5">Supported checkout currencies</h3>
+    <div class="ccy">
+      <span>USD</span><span>JPY</span><span>TWD</span><span>CAD</span><span>EUR</span><span>GBP</span><span>HKD</span><span>MYR</span><span>PHP</span><span>SGD</span><span>THB</span><span>AUD</span><span>NZD</span>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="kicker" data-i18n="k4">Highlights</div>
+    <h2 data-i18n="h_hi">Why this project is "so me"</h2>
+    <div class="panel tint">
+      <h3 data-i18n="hi1h">Non-technical, yet fluent in API docs</h3>
+      <p data-i18n="hi1p">This is the clearest expression of my positioning — a translator between engineering and business. I turn dense payment APIs into clear, fail-safe specs engineers can build, and that merchants can actually understand.</p>
+      <h3 data-i18n="hi2h">Treating "the devil in the details" as the PM's job</h3>
+      <p data-i18n="hi2p">From re-posting on a PENDING status to omitting account fields for guest checkout, untangling these edge cases is often what decides whether an order is dropped or the books fail to reconcile.</p>
+      <h3 data-i18n="hi3h">Working backward from the business goal</h3>
+      <p data-i18n="hi3p">Everything started from "expand into Southeast Asia" — making sure the integration supported local travelers' currencies and payment habits, rather than integrating for its own sake.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="kicker" data-i18n="k5">Outcome</div>
+    <h2 data-i18n="h_out">Results &amp; recognition</h2>
+    <div class="stat-row">
+      <div class="stat" data-i18n="o1"><div class="n">13</div><div class="l">checkout currencies supported</div></div>
+      <div class="stat" data-i18n="o2"><div class="n">↑15%+</div><div class="l">expected cross-border order completion</div></div>
+      <div class="stat" data-i18n="o3"><div class="n">400M+</div><div class="l">PayPal active users · 200+ markets</div></div>
+    </div>
+    <ul>
+      <li data-i18n="ol1">Shipped PayPal multi-currency cross-border payment, with 13 checkout currencies and card payment for visitors who don't have a PayPal account.</li>
+      <li data-i18n="ol2">Expected to lift cross-border order completion by 15%+ (Rezio's average uplift from adding online payment).</li>
+      <li data-i18n="ol3"><b>Brand exposure:</b> in July 2025 Rezio announced its expanded payment integration alongside PayPal, PAYUNi and iStaging — covered by Commercial Times (工商時報) and other media.</li>
+    </ul>
+    <div class="note" data-i18n="note">✦ Related: in the same period I led Japan's "Yinlou" project, replacing Stripe JP with local gateway TapPay JP and unifying the re-post scheduler — the other major thread of this cross-border payment push.</div>
+  </section>
+
+  <section class="block">
+    <div class="kicker" data-i18n="k6">Skills applied</div>
+    <div class="skills">
+      <span class="chip" data-i18n="c1">Reading &amp; translating 3rd-party API docs</span>
+      <span class="chip" data-i18n="c2">Cross-border payment &amp; fee-split logic</span>
+      <span class="chip" data-i18n="c3">Fail-safe &amp; error-handling specs</span>
+      <span class="chip" data-i18n="c4">Refund &amp; reconciliation design</span>
+      <span class="chip" data-i18n="c5">Cross-team &amp; external-partner collaboration</span>
+      <span class="chip" data-i18n="c6">Business-goal-driven requirements</span>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer>© 2026 Janet Chen · 陳毓聆 — Cross-border Payments (PayPal) case study</footer>
+
+
+<script>
+  const I18N={"tag": {"en": "FinTech · Cross-border · SEA", "zh": "金融科技 · 跨境 · 東南亞"}, "title": {"en": "Cross-border<br/>Payments — <em>PayPal</em>", "zh": "跨境<br/>多元支付 — <em>PayPal</em>"}, "sub": {"en": "Led the PayPal integration so overseas merchants — in markets Stripe couldn't reach — could take card payments, by bridging an overseas vendor and our engineers across the language gap.", "zh": "主導 PayPal 串接，讓 Stripe 觸及不到的海外市場商家也能收卡——並跨越語言落差，擔任海外原廠與我方工程團隊之間的橋樑。"}, "m1": {"en": "<i class=\"dot\"></i> Role: Product Manager (owner)", "zh": "<i class=\"dot\"></i> 角色：產品經理（負責人）"}, "m3": {"en": "<i class=\"dot\"></i> Rezio (a KKday company)", "zh": "<i class=\"dot\"></i> Rezio（KKday 旗下）"}, "impact": {"en": "↑ 15%+ expected order completion rate", "zh": "↑ 15%+ 預期訂單完成率"}, "k1": {"en": "Context &amp; Problem", "zh": "背景與問題"}, "h_prob": {"en": "Stripe couldn't reach many of our overseas markets", "zh": "原本的 Stripe，服務不了許多海外市場"}, "p_prob": {"en": "Beyond Taiwan, Rezio serves a large base of overseas merchants — across Southeast Asia, the Middle East and Africa. Many of those countries can't even apply for Stripe, the gateway we'd integrated, so we needed PayPal, which supports 100+ countries:", "zh": "除了台灣，Rezio 也服務眾多海外商家——遍及東南亞、中東與非洲。其中許多國家根本無法申請我們原本串接的 Stripe，因此需要導入支援全球 100+ 國的 PayPal："}, "pl1": {"en": "Target markets span <b>100+ countries</b> with different currencies and payment habits — and need a way for visitors <b>without a PayPal account</b> to pay by card.", "zh": "目標市場橫跨 <b>100+ 國</b>，幣別與支付習慣各異——也要讓<b>沒有 PayPal 帳號</b>的旅客能直接刷卡。"}, "pl2": {"en": "Cross-border payments involve fees, currency conversion, fee-splitting, refund windows and disputes — miss any one and you get <b>dropped orders or books that don't reconcile</b>.", "zh": "跨境支付牽涉手續費、幣別轉換、拆帳、退款期限與爭議——任何一環沒顧到，就會<b>漏單或帳對不起來</b>。"}, "pl3": {"en": "Rezio's own data: adding online payment lifts the average <b>order-completion rate by 15%+</b> — payment convenience is the conversion lever.", "zh": "Rezio 自家數據：導入線上支付平均能讓<b>訂單完成率提升 15%+</b>——支付便利度就是轉換的槓桿。"}, "k2": {"en": "Goal", "zh": "目標"}, "h_goal": {"en": "Make PayPal work end to end", "zh": "讓 PayPal 端到端跑起來"}, "p_goal": {"en": "Integrate PayPal into Rezio to deliver:", "zh": "把 PayPal 整合進 Rezio，達成："}, "gl1": {"en": "Multi-currency checkout (USD, JPY, TWD, PHP, THB, SGD and more — 13 currencies).", "zh": "多幣別結帳（USD、JPY、TWD、PHP、THB、SGD 等共 13 種幣別）。"}, "gl2": {"en": "Pay with a PayPal account, or by credit card directly (no account needed).", "zh": "可用 PayPal 帳號付款，或直接刷卡（免帳號）。"}, "gl3": {"en": "A complete, traceable fee-split, refund and reconciliation mechanism.", "zh": "完整且可追溯的拆帳、退款與對帳機制。"}, "gl4": {"en": "A fail-safe flow that doesn't drop orders even when the gateway disconnects or responses lag.", "zh": "即使金流斷線或回應延遲也不漏單的防呆流程。"}, "k3": {"en": "Solution", "zh": "解決方案"}, "h_sol": {"en": "A non-technical PM as the language &amp; comms bridge", "zh": "擔任語言與溝通橋樑的非技術 PM"}, "h_sol1": {"en": "Reading the vendor's English docs — scoping what we'd actually use", "zh": "讀原廠英文文件——界定我們實際要用的範圍"}, "p_sol1": {"en": "I'm not from a technical background, and I didn't read PayPal's raw API reference end to end. Instead I worked through PayPal's <b>English integration guides</b>, pinned down the specific <b>APIs, fields and parameters we'd actually use</b>, and confirmed them repeatedly with PayPal's team in India — so our engineers, working across an English gap, wouldn't misread the spec. In the weekly syncs I also helped them raise and clarify questions with PayPal directly:", "zh": "我不是技術背景，也不是把 PayPal 的原始 API 文件從頭啃到尾；而是研讀原廠的<b>英文串接說明</b>，釐清我方<b>實際要用的 API、欄位與對應參數</b>，並與印度原廠團隊反覆確認——讓有英文落差的我方工程師不會誤解規格。每週例會中，我也協助工程師直接向 PayPal 提問、釐清問題："}, "h_sol2": {"en": "Making the fee-split logic clear", "zh": "把拆帳邏輯講清楚"}, "p_sol2": {"en": "I mapped and documented the whole money trail — from <code>gross_amount</code> → <code>platform_fees</code> → <code>paypal_fee</code> → <code>net_amount</code> → <code>exchange_rate</code> → <code>receivable_amount</code> — and defined the difference between \"collect everything then convert to the primary currency\" versus \"receive in that currency without conversion,\" so merchants understand exactly how each payout is calculated.", "zh": "我梳理並記錄了整條金流——從 <code>gross_amount</code> → <code>platform_fees</code> → <code>paypal_fee</code> → <code>net_amount</code> → <code>exchange_rate</code> → <code>receivable_amount</code>——並定義「全收後轉換為主幣別」與「以該幣別收款、不轉換」的差異，讓商家清楚每筆撥款如何算出。"}, "h_sol3": {"en": "Designing fail-safes for the edge cases", "zh": "為極端情境設計防呆"}, "sl1": {"en": "<b>Reconciliation / re-post mechanism:</b> Sandbox negative testing revealed that an <code>HTTP 201</code> with status <code>PENDING</code> must be treated as <b>not complete</b> — wait for the Webhook, then write the order — so success is never mis-read and no order is dropped.", "zh": "<b>補單／重送機制：</b>Sandbox 反向測試發現，回傳 <code>HTTP 201</code> 且狀態為 <code>PENDING</code> 時必須視為<b>尚未完成</b>——等 Webhook 通知再寫入訂單——確保成功狀態不被誤判、訂單不漏。"}, "sl2": {"en": "<b>Error-code translation:</b> mapped PayPal's error codes into human-readable prompts with default failure copy.", "zh": "<b>錯誤代碼轉譯：</b>把 PayPal 錯誤代碼對應成人看得懂的提示，並備有預設失敗文案。"}, "sl3": {"en": "<b>Passing tracking context:</b> used <code>SetTransactionContext</code> to send <code>TRACKING_ID</code>, payer email and session date for reconciliation — and, recognizing that buyers checkout without registering, deliberately omitted the member-account fields.", "zh": "<b>傳遞追蹤情境：</b>用 <code>SetTransactionContext</code> 傳送 <code>TRACKING_ID</code>、付款人 email 與場次日期供對帳——並考量買家未註冊即結帳，刻意省略會員帳號欄位。"}, "h_sol4": {"en": "Rigorous refund &amp; reconciliation rules", "zh": "嚴謹的退款與對帳規則"}, "rl1": {"en": "<b>Refunds:</b> 0–179 days from the transaction date, straight from the Rezio back office, with no extra fee (the original fee isn't returned); past 180 days, disputes go through PayPal's Resolution Center.", "zh": "<b>退款：</b>交易日起 0–179 天可直接在 Rezio 後台退款，不收額外手續費（原手續費不退）；超過 180 天，爭議走 PayPal 的 Resolution Center。"}, "rl2": {"en": "<b>Reconciliation:</b> payer email and an itemized fee breakdown appear in the order's billing record, so merchants can match it against their PayPal back office.", "zh": "<b>對帳：</b>付款人 email 與逐項手續費明細會顯示在訂單帳務紀錄，讓商家能與 PayPal 後台對帳。"}, "h_sol5": {"en": "Supported checkout currencies", "zh": "支援的結帳幣別"}, "k4": {"en": "Highlights", "zh": "亮點"}, "h_hi": {"en": "Why this project is \"so me\"", "zh": "為什麼這個專案「很我」"}, "hi1h": {"en": "Non-technical, but the language &amp; comms bridge", "zh": "非技術，卻是語言與溝通的橋樑"}, "hi1p": {"en": "This is the clearest expression of my edge — turning dense English vendor docs into a scope the team could build, and being the person who keeps an overseas vendor and an in-house team genuinely understanding each other.", "zh": "這最能體現我的優勢——把艱澀的原廠英文文件，轉成團隊能著手的範圍，並擔任讓海外原廠與內部團隊真正互相理解的那個人。"}, "hi2h": {"en": "Treating \"the devil in the details\" as the PM's job", "zh": "把「魔鬼藏在細節裡」當成 PM 的本分"}, "hi2p": {"en": "From re-posting on a PENDING status to omitting account fields for guest checkout, untangling these edge cases is often what decides whether an order is dropped or the books fail to reconcile.", "zh": "從 PENDING 狀態的補單，到訪客結帳省略帳號欄位，釐清這些極端情境，往往決定了會不會漏單、帳對不對得起來。"}, "hi3h": {"en": "Working backward from the business goal", "zh": "從商業目標往回推"}, "hi3p": {"en": "Everything started from \"expand into Southeast Asia\" — making sure the integration supported local travelers' currencies and payment habits, rather than integrating for its own sake.", "zh": "一切都從「拓展東南亞」出發——確保串接支援當地旅客的幣別與支付習慣，而不是為串接而串接。"}, "k5": {"en": "Outcome", "zh": "成果"}, "h_out": {"en": "Results &amp; recognition", "zh": "成效與肯定"}, "o1": {"en": "<div class=\"n\">13</div><div class=\"l\">checkout currencies supported</div>", "zh": "<div class=\"n\">13</div><div class=\"l\">種結帳幣別</div>"}, "o2": {"en": "<div class=\"n\">↑15%+</div><div class=\"l\">expected cross-border order completion</div>", "zh": "<div class=\"n\">↑15%+</div><div class=\"l\">預期跨境訂單完成率</div>"}, "o3": {"en": "<div class=\"n\">400M+</div><div class=\"l\">PayPal active users · 200+ markets</div>", "zh": "<div class=\"n\">400M+</div><div class=\"l\">PayPal 活躍用戶 · 200+ 市場</div>"}, "ol1": {"en": "Shipped PayPal multi-currency cross-border payment, with 13 checkout currencies and card payment for visitors who don't have a PayPal account.", "zh": "上線 PayPal 多幣別跨境支付，支援 13 種結帳幣別，並讓沒有 PayPal 帳號的旅客也能刷卡。"}, "ol2": {"en": "Expected to lift cross-border order completion by 15%+ (Rezio's average uplift from adding online payment).", "zh": "預期跨境訂單完成率提升 15%+（Rezio 導入線上支付的平均提升幅度）。"}, "ol3": {"en": "<b>Brand exposure:</b> in July 2025 Rezio announced its expanded payment integration alongside PayPal, PAYUNi and iStaging — covered by Commercial Times (工商時報) and other media.", "zh": "<b>品牌曝光：</b>2025 年 7 月 Rezio 偕同 PayPal、PAYUNi 與 iStaging 宣布擴大金流整合——獲工商時報等媒體報導。"}, "note": {"en": "✦ Related: in the same period I led Japan's \"Yinlou\" project, replacing Stripe JP with local gateway TapPay JP and unifying the re-post scheduler — the other major thread of this cross-border payment push.", "zh": "✦ 相關：同期我主導日本「銀樓」專案，以在地金流 TapPay JP 取代 Stripe JP，並統一補單排程——是這波跨境金流的另一條主線。"}, "k6": {"en": "Skills applied", "zh": "運用的能力"}, "c1": {"en": "Bridging overseas vendor &amp; engineers", "zh": "海外原廠與工程的溝通橋樑"}, "c2": {"en": "Cross-border payment &amp; fee-split logic", "zh": "跨境支付與拆帳邏輯"}, "c3": {"en": "Fail-safe &amp; error-handling specs", "zh": "防呆與錯誤處理規格"}, "c4": {"en": "Refund &amp; reconciliation design", "zh": "退款與對帳設計"}, "c5": {"en": "Cross-team &amp; external-partner collaboration", "zh": "跨團隊與外部夥伴協作"}, "c6": {"en": "Business-goal-driven requirements", "zh": "以商業目標驅動需求"}};
+  function applyLang(l){
+    document.documentElement.lang=(l==='zh'?'zh-Hant':'en');
+    document.querySelectorAll('[data-i18n]').forEach(el=>{const d=I18N[el.dataset.i18n];if(d&&d[l]!=null)el.innerHTML=d[l];});
+    const b=document.getElementById('csLang');if(b)b.textContent=(l==='en'?'中文':'English');
+  }
+  let LANG=(location.hash||'').replace('#','');
+  if(LANG!=='zh'&&LANG!=='en')LANG=localStorage.getItem('lang');
+  if(LANG!=='zh'&&LANG!=='en')LANG=((navigator.language||'').toLowerCase().indexOf('zh')===0)?'zh':'en';
+  const _b=document.getElementById('csLang');
+  if(_b)_b.addEventListener('click',()=>{LANG=(LANG==='en'?'zh':'en');localStorage.setItem('lang',LANG);applyLang(LANG);});
+  applyLang(LANG);
+</script>
+</body>
+</html>

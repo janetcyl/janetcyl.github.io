@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Janet Chen — Product Professional · B2B2C SaaS</title>
+<meta name="description" content="Janet Chen (陳毓聆) — Senior B2B2C SaaS Product Manager & Travel Tech specialist. Business acumen with a UX soul." />
+
+<!-- Google Analytics 4 — 把下面兩處 G-XXXXXXXXXX 換成你自己的「測量 ID」即可 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<!-- /Google Analytics 4 -->
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iIzFmMmE1MiIvPjx0ZXh0IHg9IjYuNSIgeT0iMjMiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjZmZmIj5KPC90ZXh0PjxjaXJjbGUgY3g9IjI0IiBjeT0iMjIiIHI9IjMuNiIgZmlsbD0iIzE2YTQ3ZCIvPjwvc3ZnPg==" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Janet Chen — Product Professional · B2B2C SaaS" />
+<meta property="og:description" content="Senior B2B2C SaaS Product Manager & UX Designer. Business acumen with a UX soul." />
+<meta property="og:image" content="About.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Noto+Sans+TC:wght@500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#1f2a52;          /* deep navy */
+    --navy-2:#26336b;
+    --navy-deep:#141d3b;     /* near-black navy for dark sections */
+    --green:#16a47d;         /* emerald */
+    --green-soft:#34c79b;
+    --green-tint:#e7f6f0;    /* light green panel */
+    --cream:#f5f7f4;
+    --card:#ffffff;
+    --ink:#222a3f;
+    --ink-soft:#5d6678;
+    --line:#e3e8e6;
+    --max:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream); color:var(--ink);
+    font-family:'Inter','Noto Sans TC',-apple-system,system-ui,sans-serif;
+    line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 30px;}
+  h1,h2,h3,h4,.display{font-family:'Poppins','Noto Sans TC',sans-serif;letter-spacing:-.01em;}
+  .hero-title .zh,.brand,footer{font-family:'Poppins','Noto Sans TC',sans-serif;}
+  a{color:inherit;text-decoration:none;}
+
+  /* ---------- Nav ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(10px);
+      background:rgba(245,247,244,.7);border-bottom:1px solid transparent;transition:.3s;}
+  nav.scrolled{border-color:var(--line);background:rgba(245,247,244,.9);}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;}
+  .brand{font-family:'Poppins';font-weight:700;font-size:1.15rem;color:var(--navy);}
+  .brand b{color:var(--green);}
+  .nav-links{display:flex;gap:28px;font-size:.9rem;font-weight:500;}
+  .nav-links a{color:var(--ink-soft);transition:color .2s;}
+  .nav-links a:hover{color:var(--green);}
+  @media(max-width:720px){.nav-links{display:none;}}
+
+  /* ---------- Hero ---------- */
+  header{background:linear-gradient(150deg,#1f2a52 0%,#26336b 60%,#1d2a57 100%);color:#fff;
+         border-radius:0 0 28px 28px;position:relative;overflow:hidden;padding:138px 0 84px;}
+  header .deco{position:absolute;inset:0;opacity:.16;pointer-events:none;}
+  header .wrap{position:relative;z-index:2;max-width:880px;}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(52,199,155,.16);
+        color:var(--green-soft);border:1px solid rgba(52,199,155,.4);border-radius:999px;
+        padding:7px 16px;font-size:.82rem;font-weight:600;letter-spacing:.04em;}
+  .eyebrow{font-family:'Poppins';font-size:.82rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--green-soft);}
+  .hero-title{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:clamp(2.6rem,6.4vw,4.8rem);line-height:1.06;margin:22px 0 0;letter-spacing:-.01em;}
+  .hero-title em{font-style:italic;color:var(--green-soft);}
+  .hero-sub{font-size:clamp(1.02rem,1.7vw,1.18rem);color:rgba(255,255,255,.82);max-width:660px;margin-top:22px;}
+  .hero-sub b{color:#fff;font-weight:600;}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;font-size:.9rem;color:rgba(255,255,255,.8);}
+  .hero-meta span{display:inline-flex;align-items:center;gap:8px;}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--green-soft);}
+  .cta{display:flex;flex-wrap:wrap;gap:13px;margin-top:36px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:12px 24px;
+       font-size:.95rem;font-weight:600;font-family:'Poppins';transition:transform .25s,background .25s,box-shadow .25s;}
+  .btn.primary{background:var(--green);color:#fff;box-shadow:0 10px 26px -12px rgba(22,164,125,.9);}
+  .btn.primary:hover{background:#11906d;transform:translateY(-2px);}
+  .btn.ghost{border:1.5px solid rgba(255,255,255,.5);color:#fff;}
+  .btn.ghost:hover{border-color:var(--green-soft);color:var(--green-soft);transform:translateY(-2px);}
+
+  /* ---------- Sections ---------- */
+  section{padding:74px 0;}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+  .sec-kicker{font-family:'Poppins';font-weight:700;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);}
+  .sec-bar{height:3px;flex:1;background:linear-gradient(90deg,var(--green),transparent);border-radius:2px;max-width:120px;}
+  .sec-title{font-size:clamp(1.9rem,4vw,2.7rem);font-weight:800;color:var(--navy);line-height:1.1;}
+  .lead{font-size:1.16rem;max-width:760px;color:var(--ink);margin-top:18px;}
+  .lead.soft{color:var(--ink-soft);font-size:1.04rem;margin-top:16px;}
+  .lead .hl{color:var(--green);font-weight:600;}
+
+    /* ---------- About layout ---------- */
+  .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:44px;align-items:center;margin-top:6px;}
+  .about-illu{display:flex;justify-content:center;}
+  .about-illu img{width:100%;max-width:360px;height:auto;}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:24px;} .about-illu img{max-width:300px;}}
+
+  /* ---------- Language switch ---------- */
+  .lang-btn{flex:none;align-self:center;margin-left:6px;background:none;border:none;color:rgba(255,255,255,.8);font-family:'Poppins';font-weight:600;font-size:.92rem;letter-spacing:.02em;cursor:pointer;padding:6px 4px;white-space:nowrap;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1.5px;text-decoration-color:rgba(255,255,255,.45);transition:color .2s,text-decoration-color .2s;}
+  .lang-btn:hover{color:var(--green-soft);text-decoration-color:var(--green-soft);}
+
+  /* ---------- Work cards ---------- */
+  .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:42px;}
+  @media(max-width:760px){.work-grid{grid-template-columns:1fr;}}
+  .work{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:0 0 28px;
+        overflow:hidden;transition:transform .35s cubic-bezier(.2,.7,.3,1),box-shadow .35s,border-color .35s;}
+  .work:hover{transform:translateY(-6px);box-shadow:0 24px 50px -28px rgba(31,42,82,.5);border-color:var(--green-soft);}
+  .work-illu{height:158px;background:var(--green-tint);border-bottom:1px solid var(--line);overflow:hidden;}
+  .work-illu svg{width:100%;height:100%;display:block;transition:transform .5s cubic-bezier(.2,.7,.3,1);}
+  .work:hover .work-illu svg{transform:scale(1.045);}
+  .work-body{padding:24px 28px 0;}
+  .work-top{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;}
+  .work h3{font-size:1.28rem;font-weight:700;color:var(--navy);}
+  .work-tag{font-size:.72rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#fff;
+            background:var(--navy);border-radius:999px;padding:5px 12px;white-space:nowrap;}
+  .work p{color:var(--ink-soft);margin-top:12px;font-size:.96rem;}
+  .work p b{color:var(--ink);font-weight:600;}
+  .impact{display:inline-flex;align-items:center;gap:8px;margin-top:18px;background:var(--green-tint);
+          color:#0e7a5c;font-family:'Poppins';font-weight:600;font-size:.92rem;border-radius:999px;padding:7px 15px;}
+
+  /* ---------- Journey timeline ---------- */
+  .journey{background:#fff;border-radius:26px;border:1px solid var(--line);padding:46px clamp(24px,4vw,52px);margin-top:40px;}
+  .journey-intro{color:var(--ink-soft);max-width:760px;margin-bottom:30px;}
+  .tl{position:relative;padding-left:54px;}
+  .tl::before{content:"";position:absolute;left:17px;top:6px;bottom:6px;width:2px;background:var(--line);}
+  .tl-item{position:relative;padding-bottom:30px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-num{position:absolute;left:-54px;top:-2px;width:36px;height:36px;border-radius:11px;background:var(--green);
+          color:#fff;font-family:'Poppins';font-weight:700;display:flex;align-items:center;justify-content:center;
+          box-shadow:0 8px 18px -8px rgba(22,164,125,.9);}
+  .tl-role{font-family:'Poppins';font-weight:700;color:var(--navy);font-size:1.12rem;}
+  .tl-role span{color:var(--ink-soft);font-weight:500;font-size:.92rem;font-family:'Inter';}
+  .tl-item ul{margin:8px 0 0;padding-left:18px;color:var(--ink-soft);font-size:.96rem;}
+  .tl-item li{margin-bottom:4px;}
+  .tl-item li b{color:var(--green);font-weight:600;}
+  .note{display:flex;gap:12px;align-items:flex-start;background:var(--green-tint);border-left:4px solid var(--green);
+        border-radius:0 12px 12px 0;padding:16px 20px;margin-top:26px;color:#0e6e54;font-size:.98rem;}
+
+    /* ---------- Experience grid (index-style) ---------- */
+  .exp-list{margin-top:36px;}
+  .exp{display:grid;grid-template-columns:160px 1fr;gap:8px 36px;padding:26px 0;border-top:1px solid var(--line);}
+  .exp:first-child{border-top:none;}
+  .exp-when{font-family:'Poppins';font-weight:600;font-size:.9rem;color:var(--ink-soft);padding-top:5px;}
+  .exp-role{font-family:'Poppins';font-weight:700;font-size:1.22rem;color:var(--navy);}
+  .exp-role .exp-pt{font-weight:500;font-size:.86rem;color:var(--ink-soft);}
+  .exp-co{color:var(--green);font-weight:600;font-size:.98rem;margin-top:2px;}
+  .exp-desc{color:var(--ink-soft);margin-top:10px;font-size:.97rem;}
+  @media(max-width:620px){.exp{grid-template-columns:1fr;gap:4px;}}
+
+  /* ---------- Dark competencies ---------- */
+  .dark{background:var(--navy-deep);color:#fff;border-radius:28px;margin:0 auto;}
+  .dark .sec-title{color:#fff;}
+  .comp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:40px;}
+  @media(max-width:760px){.comp-grid{grid-template-columns:1fr;gap:26px;}}
+  .comp .cn{font-family:'Poppins';font-weight:700;font-size:1.5rem;color:var(--green-soft);}
+  .comp h4{font-size:1.12rem;font-weight:700;margin:6px 0 12px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.18);}
+  .comp ul{list-style:none;}
+  .comp li{position:relative;padding-left:20px;margin-bottom:9px;color:rgba(255,255,255,.82);font-size:.96rem;}
+  .comp li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:var(--green);}
+  .tools{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px;}
+  .chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:999px;
+        padding:8px 16px;font-size:.88rem;color:#fff;font-weight:500;transition:.25s;}
+  .chip:hover{background:var(--green);border-color:var(--green);}
+  .tools-label{font-family:'Poppins';font-weight:600;color:rgba(255,255,255,.6);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-top:38px;}
+
+  /* ---------- Quote ---------- */
+  .quote{position:relative;background:#fff;border:1px solid var(--line);border-radius:22px;padding:42px 46px;margin-top:42px;}
+  .quote .mark{font-family:'Poppins';font-weight:800;font-size:4rem;line-height:.6;color:var(--green-soft);}
+  .quote p{font-family:'Poppins';font-weight:500;font-size:clamp(1.15rem,2.3vw,1.5rem);color:var(--navy);margin-top:8px;line-height:1.4;}
+
+  /* ---------- Contact ---------- */
+  .contact{background:linear-gradient(150deg,#16a47d,#0e7a5c);color:#fff;border-radius:28px;text-align:center;padding:64px 30px;}
+  .contact h2{font-size:clamp(2rem,5vw,3.1rem);font-weight:800;line-height:1.1;max-width:740px;margin:0 auto;}
+  .contact p{color:rgba(255,255,255,.9);margin-top:16px;font-size:1.08rem;}
+  .contact .cta{justify-content:center;}
+  .contact .btn.primary{background:#fff;color:#0e7a5c;box-shadow:0 12px 28px -14px rgba(0,0,0,.5);}
+  .contact .btn.primary:hover{background:#eafaf4;}
+  .contact .btn.ghost{border-color:rgba(255,255,255,.7);}
+
+  footer{padding:34px 0 56px;color:var(--ink-soft);font-size:.85rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+
+  /* ---------- Clickable work cards ---------- */
+  .work.clickable{cursor:pointer;}
+  .card-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:18px;}
+  .card-foot .impact{margin-top:0;}
+  .cs-link{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;font-family:'Poppins';
+    font-weight:600;font-size:.9rem;color:var(--green);transition:gap .25s;}
+  .work.clickable:hover .cs-link{gap:12px;}
+  .cs-link svg{width:15px;height:15px;}
+
+  /* ---------- Case-study modal ---------- */
+  .modal{position:fixed;inset:0;z-index:100;display:none;}
+  .modal.open{display:block;}
+  .modal-backdrop{position:absolute;inset:0;background:rgba(20,29,59,.55);backdrop-filter:blur(4px);
+    opacity:0;transition:opacity .3s;}
+  .modal.open .modal-backdrop{opacity:1;}
+  .modal-dialog{position:absolute;top:0;right:0;bottom:0;width:min(960px,100%);background:var(--cream);
+    box-shadow:-20px 0 60px -20px rgba(20,29,59,.6);transform:translateX(40px);opacity:0;
+    transition:transform .38s cubic-bezier(.2,.7,.3,1),opacity .38s;display:flex;flex-direction:column;}
+  .modal.open .modal-dialog{transform:none;opacity:1;}
+  .modal-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;
+    padding:14px 20px;background:var(--navy-deep);color:#fff;flex-shrink:0;}
+  .modal-bar .lbl{font-family:'Poppins';font-weight:600;font-size:.86rem;letter-spacing:.04em;color:rgba(255,255,255,.8);}
+  .modal-close{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:999px;padding:8px 16px;
+    font-family:'Poppins';font-weight:600;font-size:.85rem;cursor:pointer;transition:.2s;}
+  .modal-close:hover{background:var(--green);border-color:var(--green);}
+  .modal iframe{flex:1;width:100%;border:0;background:var(--cream);}
+  @media(max-width:760px){.modal-dialog{width:100%;}}
+
+  /* ---------- Reveal ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1);}
+  .reveal.in{opacity:1;transform:none;}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}
+    .float{animation:none!important;}}
+  .float{animation:bob 6s ease-in-out infinite;}
+  @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+</style>
+</head>
+<body>
+
+<nav id="nav"><div class="wrap">
+  <a class="brand" href="#top">Janet&nbsp;Chen<b>.</b></a>
+  <div class="nav-links">
+    <a href="#about" data-i18n="nav.about">About</a>
+    <a href="#work" data-i18n="nav.work">Work</a>
+    <a href="#journey" data-i18n="nav.journey">Journey</a>
+    <a href="#skills" data-i18n="nav.skills">Skills</a>
+    <a href="#contact" data-i18n="nav.contact">Contact</a>
+  </div>
+</div></nav>
+
+<!-- ============ HERO ============ -->
+<header id="top">
+  <svg class="deco" viewBox="0 0 1200 520" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#9fd9c5" stroke-width="2">
+      <rect x="820" y="70" width="300" height="200" rx="14"/>
+      <line x1="820" y1="120" x2="1120" y2="120"/>
+      <circle cx="852" cy="95" r="6"/><circle cx="876" cy="95" r="6"/>
+      <rect x="845" y="150" width="120" height="14" rx="7"/>
+      <rect x="845" y="178" width="200" height="10" rx="5"/>
+      <rect x="845" y="200" width="160" height="10" rx="5"/>
+      <rect x="900" y="320" width="150" height="150" rx="16"/>
+      <path d="M935 395 l22 22 l40 -46" stroke-width="3"/>
+      <circle cx="760" cy="360" r="60"/>
+      <path d="M760 300 v120 M700 360 h120" stroke-dasharray="6 8"/>
+      <rect x="1050" y="300" width="110" height="70" rx="10"/>
+      <line x1="1050" y1="326" x2="1160" y2="326"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="eyebrow reveal" data-i18n="hero.eyebrow">Senior Product Planner · B2B2C SaaS</div>
+    <h1 class="hero-title reveal" data-i18n="hero.title">A product expert with<br/>business acumen<br/>and a <em>UX soul.</em></h1>
+    <div class="hero-meta reveal" style="margin-top:34px;">
+      <span data-i18n="hero.m1"><i class="dot"></i> 9+ yrs in B2B2C SaaS</span>
+      <span data-i18n="hero.m2"><i class="dot"></i> Travel Tech · HCM</span>
+      <span data-i18n="hero.m3"><i class="dot"></i> Taipei · open to remote / EU / JP</span>
+    </div>
+    <div class="cta reveal">
+      <a class="btn primary" href="mailto:u8004800@gmail.com" data-i18n="btn.email">Email me</a>
+      <a class="btn ghost" href="https://linkedin.com/in/janetcyl" target="_blank" rel="noopener" data-i18n="btn.linkedin">LinkedIn ↗</a>
+      <button type="button" id="langToggle" class="lang-btn" aria-label="切換語言 / Switch language">中文版</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-kicker" data-i18n="about.kicker">About</span><span class="sec-bar"></span></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="lead reveal" data-i18n="about.lead">I'm Janet, an <span class="hl">experienced Product Manager and UX Designer</span> who starts from the user and turns complexity into something simple, clear, and detailed enough to ship. Across <span class="hl">9+ years</span> in Travel Tech and HCM SaaS, I've shipped 20+ features for platforms serving thousands of merchants worldwide.</p>
+        <p class="lead soft reveal" data-i18n="about.soft">Not classically design-trained — I came from English literature, and that's my edge. I untangle messy, multi-stakeholder problems, sweat the details others skip, and turn them into flows that just make sense. I read API docs end-to-end and brief engineering myself — so my work moves real numbers: conversion, cost, adoption, satisfaction.</p>
+      </div>
+      <div class="about-illu reveal"><img src="About.png" alt="Janet at work — ideas, lists, and an eye for detail" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-kicker" data-i18n="work.kicker">Selected Work</span><span class="sec-bar"></span></div>
+    <h2 class="sec-title reveal" data-i18n="work.title">Projects that moved the numbers</h2>
+    <div class="work-grid">
+
+      <article class="work reveal">
+        <div class="work-illu">
+          <svg viewBox="0 0 400 158" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="158" fill="#e7f6f0"/>
+  <line x1="44" y1="142" x2="356" y2="142" stroke="#cfe6dd" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- KIOSK: upright ticket machine, simple screen -->
+  <g stroke="#1f2a52" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="256" y="22" width="78" height="120" rx="12" fill="#fff"/>
+    <!-- simple screen -->
+    <rect x="268" y="40" width="54" height="56" rx="6" fill="#f3faf6"/>
+    <line x1="280" y1="60" x2="312" y2="60" stroke="#16a47d" stroke-width="3"/>
+    <line x1="280" y1="73" x2="304" y2="73" stroke="#cfe6dd" stroke-width="3"/>
+    <line x1="280" y1="86" x2="296" y2="86" stroke="#cfe6dd" stroke-width="3"/>
+    <!-- dispense slot -->
+    <rect x="268" y="104" width="42" height="7" rx="3" fill="#e7f6f0"/>
+  </g>
+
+  <!-- DISPENSED TICKET with printed QR -->
+  <g transform="rotate(-7 214 122)">
+    <rect x="176" y="105" width="80" height="34" rx="5" fill="#fff" stroke="#1f2a52" stroke-width="2.5"/>
+    <line x1="232" y1="105" x2="232" y2="139" stroke="#1f2a52" stroke-width="1.6" stroke-dasharray="3 3"/>
+    <rect x="244" y="105" width="12" height="34" rx="0" fill="#34c79b"/>
+    <!-- QR printed on the ticket -->
+    <g fill="#1f2a52">
+      <rect x="185" y="111" width="7" height="7" fill="none" stroke="#1f2a52" stroke-width="2"/><rect x="187.5" y="113.5" width="2" height="2"/>
+      <rect x="203" y="111" width="7" height="7" fill="none" stroke="#1f2a52" stroke-width="2"/><rect x="205.5" y="113.5" width="2" height="2"/>
+      <rect x="185" y="126" width="7" height="7" fill="none" stroke="#1f2a52" stroke-width="2"/><rect x="187.5" y="128.5" width="2" height="2"/>
+      <rect x="196" y="112" width="3" height="3"/><rect x="196" y="120" width="3" height="3"/>
+      <rect x="203" y="122" width="3" height="3"/><rect x="196" y="127" width="3" height="3"/>
+      <rect x="203" y="129" width="3" height="3"/>
+    </g>
+    <line x1="217" y1="116" x2="228" y2="116" stroke="#cfe6dd" stroke-width="2"/>
+    <line x1="217" y1="124" x2="228" y2="124" stroke="#cfe6dd" stroke-width="2"/>
+  </g>
+
+  <!-- PERSON with bent arm reaching for the ticket -->
+  <g fill="none" stroke="#1f2a52" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="98" cy="40" r="15" fill="#fff"/>
+    <path d="M74 142 V92 q0 -18 24 -18 q24 0 24 18 V142"/>
+    <path d="M122 98 L150 116 L172 120"/>
+    <circle cx="176" cy="121" r="4.5" fill="#fff"/>
+  </g>
+</svg>
+        </div>
+        <div class="work-body">
+          <div class="work-top"><h3 data-i18n="card.tix.h3">Rezio TIX — OMO Ticketing</h3><span class="work-tag" data-i18n="card.tix.tag">Travel Tech · OMO</span></div>
+          <p data-i18n="card.tix.p">A 0-to-1 hardware/software system unifying online booking with offline <b>POS counters and self-service kiosks</b> — designed for two very different users, with live inventory sync, smart date/session selection and daily cash-reconciliation safeguards. Deployed at Heping Island Geopark; experienced by Vice President Lai Ching-te on his 2024 KKday visit.</p>
+          <span class="impact" data-i18n="card.tix.impact">↓ 30% operating cost</span>
+        </div>
+      </article>
+
+      <article class="work reveal">
+        <div class="work-illu">
+          <svg viewBox="0 0 400 158" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="158" fill="#e7f6f0"/>
+  <circle cx="214" cy="80" r="96" fill="#dff2ea"/>
+
+  <!-- dashed payment network -->
+  <g fill="none" stroke="#16a47d" stroke-width="1.8" stroke-dasharray="3 4">
+    <line x1="104" y1="70" x2="196" y2="48"/>
+    <line x1="104" y1="74" x2="306" y2="50"/>
+    <line x1="106" y1="86" x2="320" y2="104"/>
+    <line x1="100" y1="92" x2="206" y2="118"/>
+  </g>
+  <g fill="#16a47d"><circle cx="196" cy="48" r="3"/><circle cx="306" cy="50" r="3"/><circle cx="320" cy="104" r="3"/><circle cx="206" cy="118" r="3"/></g>
+
+  <!-- GLOBE hub (left) -->
+  <circle cx="70" cy="80" r="36" fill="#cdece0"/>
+  <g fill="none" stroke="#1f2a52" stroke-width="2.5" stroke-linecap="round">
+    <circle cx="70" cy="80" r="36"/>
+    <line x1="34" y1="80" x2="106" y2="80"/>
+    <line x1="70" y1="44" x2="70" y2="116"/>
+    <ellipse cx="70" cy="80" rx="17" ry="36"/>
+    <line x1="42" y1="60" x2="98" y2="60"/>
+    <line x1="42" y1="100" x2="98" y2="100"/>
+  </g>
+
+  <!-- NODE: credit card (top center) -->
+  <g transform="rotate(-6 212 46)" stroke="#1f2a52" stroke-width="2.2" stroke-linejoin="round">
+    <rect x="180" y="30" width="64" height="36" rx="5" fill="#fff"/>
+    <rect x="180" y="40" width="64" height="9" fill="#16a47d"/>
+    <rect x="188" y="55" width="13" height="7" rx="1.5" fill="#34c79b"/>
+    <line x1="208" y1="59" x2="236" y2="59" stroke="#cfe6dd" stroke-width="2.5"/>
+  </g>
+
+  <!-- NODE: bank (top right) -->
+  <g stroke="#1f2a52" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M298 46 L322 32 L346 46 Z" fill="#fff"/>
+    <line x1="304" y1="50" x2="304" y2="64"/>
+    <line x1="316" y1="50" x2="316" y2="64"/>
+    <line x1="328" y1="50" x2="328" y2="64"/>
+    <line x1="340" y1="50" x2="340" y2="64"/>
+    <line x1="296" y1="66" x2="348" y2="66" stroke="#16a47d" stroke-width="3"/>
+  </g>
+
+  <!-- NODE: mobile wallet (right) -->
+  <g stroke="#1f2a52" stroke-width="2.2" stroke-linejoin="round">
+    <rect x="314" y="84" width="36" height="50" rx="6" fill="#fff"/>
+    <line x1="328" y1="90" x2="336" y2="90" stroke-linecap="round"/>
+    <text x="332" y="116" font-size="22" font-weight="700" fill="#16a47d" text-anchor="middle" stroke="none">$</text>
+  </g>
+
+  <!-- NODE: multi-currency coins (bottom center) -->
+  <g stroke="#1f2a52" stroke-width="2.2">
+    <circle cx="192" cy="116" r="15" fill="#fff"/>
+    <text x="192" y="122" font-size="17" font-weight="700" fill="#1f2a52" text-anchor="middle" stroke="none">€</text>
+    <circle cx="218" cy="124" r="15" fill="#fff"/>
+    <text x="218" y="130" font-size="17" font-weight="700" fill="#16a47d" text-anchor="middle" stroke="none">¥</text>
+  </g>
+</svg>
+        </div>
+        <div class="work-body">
+          <div class="work-top"><h3 data-i18n="card.pay.h3">Cross-border Payments</h3><span class="work-tag" data-i18n="card.pay.tag">FinTech · SEA / JP</span></div>
+          <p data-i18n="card.pay.p"><b>PayPal:</b> as project owner, led the integration to open the Philippines, Thailand and Indonesia — reading the technical docs end to end and running a weekly sync with engineers in India. <b>TapPay JP:</b> led Japan's localized switch with card pre-authorization, multi-currency and a dropped-transaction auto-retry safeguard.</p>
+          <span class="impact" data-i18n="card.pay.impact">↑ 15%+ SEA conversion</span>
+        </div>
+      </article>
+
+      <article class="work reveal">
+        <div class="work-illu">
+          <svg viewBox="0 0 400 158" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="158" fill="#e7f6f0"/>
+
+  <!-- whole illustration, centered -->
+  <g transform="translate(19,-1)">
+
+    <!-- window (narrower) -->
+    <rect x="34" y="20" width="212" height="114" rx="12" fill="#fff" stroke="#1f2a52" stroke-width="2.5"/>
+    <circle cx="50" cy="34" r="3.1" fill="#16a47d"/><circle cx="60" cy="34" r="3.1" fill="#cfe6dd"/><circle cx="70" cy="34" r="3.1" fill="#cfe6dd"/>
+    <rect x="160" y="27" width="74" height="14" rx="7" fill="#eef7f3" stroke="#1f2a52" stroke-width="1.6"/>
+    <circle cx="169" cy="34" r="3.1" fill="none" stroke="#1f2a52" stroke-width="1.6"/>
+    <line x1="171.2" y1="36.2" x2="173.3" y2="38.3" stroke="#1f2a52" stroke-width="1.6" stroke-linecap="round"/>
+    <line x1="179" y1="34" x2="228" y2="34" stroke="#cfe6dd" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="46" y1="49" x2="234" y2="49" stroke="#e3e8e6" stroke-width="2"/>
+
+    <!-- bar chart: 4 bars (narrower) -->
+    <rect x="46" y="57" width="56" height="64" rx="7" fill="#eef7f3" stroke="#1f2a52" stroke-width="1.6"/>
+    <line x1="52" y1="113" x2="96" y2="113" stroke="#cfe6dd" stroke-width="2"/>
+    <g fill="#1f2a52">
+      <rect x="52" y="98" width="7" height="15"/>
+      <rect x="63" y="85" width="7" height="28"/>
+      <rect x="85" y="89" width="7" height="24"/>
+    </g>
+    <rect x="74" y="75" width="7" height="38" fill="#16a47d"/>
+
+    <!-- filter tabs -->
+    <rect x="116" y="57" width="34" height="13" rx="6.5" fill="#16a47d"/>
+    <rect x="154" y="57" width="34" height="13" rx="6.5" fill="#fff" stroke="#1f2a52" stroke-width="1.6"/>
+    <rect x="192" y="57" width="20" height="13" rx="6.5" fill="#eef7f3"/>
+    <g fill="#1f2a52"><circle cx="197" cy="63.5" r="1.3"/><circle cx="202" cy="63.5" r="1.3"/><circle cx="207" cy="63.5" r="1.3"/></g>
+
+    <!-- order rows -->
+    <circle cx="124" cy="85" r="3.4" fill="#1f2a52"/>
+    <line x1="135" y1="82" x2="234" y2="82" stroke="#1f2a52" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="135" y1="89" x2="196" y2="89" stroke="#cfe6dd" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="124" cy="103" r="3.4" fill="#34c79b"/>
+    <line x1="135" y1="100" x2="234" y2="100" stroke="#1f2a52" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="135" y1="107" x2="196" y2="107" stroke="#cfe6dd" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="124" cy="120" r="3.4" fill="none" stroke="#1f2a52" stroke-width="2"/>
+    <line x1="135" y1="120" x2="228" y2="120" stroke="#cfe6dd" stroke-width="2.4" stroke-linecap="round"/>
+
+    <!-- order receipt (popping out right) -->
+    <g stroke="#1f2a52" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M228 80 q0 -7 7 -7 H321 q7 0 7 7 V138 l-9.6 8 l-9.6 -8 l-9.6 8 l-9.6 -8 l-9.6 8 l-9.6 -8 l-9.6 8 l-9.6 -8 l-9.6 8 Z" fill="#fff"/>
+      <circle cx="248" cy="96" r="8" fill="#16a47d" stroke="none"/>
+      <path d="M243.5 96 l3 3 l6 -7" fill="none" stroke="#fff" stroke-width="2.4"/>
+      <line x1="263" y1="96" x2="316" y2="96" stroke="#1f2a52" stroke-width="2.4"/>
+      <line x1="242" y1="113" x2="316" y2="113" stroke="#cfe6dd" stroke-width="2.6"/>
+      <line x1="242" y1="123" x2="290" y2="123" stroke="#cfe6dd" stroke-width="2.6"/>
+    </g>
+
+  </g>
+</svg>
+        </div>
+        <div class="work-body">
+          <div class="work-top"><h3 data-i18n="card.dash.h3">Order Dashboard</h3><span class="work-tag" data-i18n="card.dash.tag">Enterprise · Performance</span></div>
+          <p data-i18n="card.dash.p">For mega-suppliers like <b>Nikko Toshogu and Asahiyama Zoo</b> handling tens of thousands of orders: I redesigned the order list into 18 quick-filter categories with red/yellow deadline countdown flags, and optimized the list UI and search to cut query time sharply.</p>
+          <span class="impact" data-i18n="card.dash.impact">↓ 50%+ order query time</span>
+        </div>
+      </article>
+
+      <article class="work reveal">
+        <div class="work-illu">
+          <svg viewBox="0 0 400 158" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="158" fill="#e7f6f0"/>
+
+  <!-- PHONE: learning app -->
+  <g stroke="#1f2a52" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="74" y="22" width="108" height="124" rx="15" fill="#fff"/>
+    <line x1="115" y1="32" x2="141" y2="32" stroke-width="2.5"/>
+    <rect x="84" y="42" width="88" height="96" rx="8" fill="#eef7f3" stroke="none"/>
+  </g>
+  <!-- app title bar -->
+  <rect x="92" y="49" width="58" height="11" rx="3" fill="#16a47d"/>
+  <rect x="156" y="49" width="9" height="11" rx="2.5" fill="#cfe6dd"/>
+  <!-- lesson rows -->
+  <g stroke="#1f2a52" stroke-width="1.6" stroke-linejoin="round">
+    <rect x="92" y="68" width="72" height="19" rx="4" fill="#fff"/>
+    <rect x="92" y="91" width="72" height="19" rx="4" fill="#fff"/>
+    <rect x="92" y="114" width="72" height="19" rx="4" fill="#fff"/>
+  </g>
+  <!-- row1: completed (check) -->
+  <circle cx="103" cy="77" r="6" fill="#16a47d" stroke="none"/>
+  <path d="M100 77 l2 2 l4 -4.5" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="116" y1="74" x2="158" y2="74" stroke="#cfe6dd" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="116" y1="81" x2="146" y2="81" stroke="#cfe6dd" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- row2: playing (progress) -->
+  <circle cx="103" cy="100" r="6" fill="#fff" stroke="#1f2a52" stroke-width="1.6"/>
+  <path d="M101 97.5 l4 2.5 l-4 2.5 Z" fill="#16a47d" stroke="none"/>
+  <line x1="116" y1="96" x2="158" y2="96" stroke="#cfe6dd" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="116" y1="103" x2="150" y2="103" stroke="#16a47d" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- row3: locked/clock -->
+  <circle cx="103" cy="123" r="6" fill="#fff" stroke="#1f2a52" stroke-width="1.6"/>
+  <path d="M103 123 l0 -3 M103 123 l2.5 1.5" fill="none" stroke="#1f2a52" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="116" y1="120" x2="158" y2="120" stroke="#cfe6dd" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="116" y1="127" x2="142" y2="127" stroke="#cfe6dd" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- FLOATING: graduation cap -->
+  <g stroke="#1f2a52" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+    <!-- head band (behind board) -->
+    <path d="M277 63 L307 63 L303 83 Q292 89 281 83 Z" fill="#fff"/>
+    <!-- mortarboard -->
+    <path d="M292 46 L334 61 L292 76 L250 61 Z" fill="#fff"/>
+    <!-- button + tassel -->
+    <circle cx="292" cy="61" r="2.6" fill="#1f2a52" stroke="none"/>
+    <path d="M334 61 L334 80"/>
+    <circle cx="334" cy="83" r="4" fill="#16a47d" stroke="none"/>
+  </g>
+
+  <!-- FLOATING: completion check bubble -->
+  <g>
+    <rect x="276" y="100" width="40" height="36" rx="10" fill="#16a47d"/>
+    <path d="M292 135 L304 135 L291 146 Z" fill="#16a47d"/>
+    <path d="M287 118 l5 5 l11 -12" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
+        </div>
+        <div class="work-body">
+          <div class="work-top"><h3 data-i18n="card.orca.h3">Orca Go — Learning App</h3><span class="work-tag" data-i18n="card.orca.tag">Mobile Learning · 0→1</span></div>
+          <p data-i18n="card.orca.p">An enterprise mobile learning app. With <b>zero prior app experience</b> and tight resources, I defined the MVP (who / what / why) and delivered 60+ screens in 4 months on 2-week sprints. Drove upgrades from Regent Hotels, Sinyi Realty and PTI; opened new business with My Humble House Group.</p>
+          <span class="impact" data-i18n="card.orca.impact">Tens of thousands of downloads</span>
+        </div>
+      </article>
+
+      <article class="work reveal">
+        <div class="work-illu"><svg viewBox="0 0 400 158" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="158" fill="#e7f6f0"/>
+
+  <!-- VIDEO CONTENT (left) -->
+  <g stroke="#1f2a52" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="40" y="40" width="128" height="84" rx="10" fill="#fff"/>
+    <circle cx="104" cy="74" r="18" fill="#fff" stroke="#16a47d"/>
+    <path d="M98 66 L114 74 L98 82 Z" fill="#16a47d" stroke="none"/>
+    <line x1="56" y1="108" x2="152" y2="108" stroke="#cfe6dd" stroke-width="4"/>
+    <line x1="56" y1="108" x2="110" y2="108" stroke="#16a47d" stroke-width="4"/>
+    <circle cx="110" cy="108" r="4" fill="#16a47d" stroke="none"/>
+  </g>
+  <!-- upload arrow badge -->
+  <g stroke="#1f2a52" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="158" cy="48" r="13" fill="#fff"/>
+    <line x1="158" y1="54" x2="158" y2="42" stroke="#16a47d"/>
+    <path d="M153 47 L158 41 L163 47" fill="none" stroke="#16a47d"/>
+  </g>
+
+  <!-- publish arrow -->
+  <g stroke="#16a47d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="174" y1="82" x2="196" y2="82"/>
+    <path d="M190 76 L198 82 L190 88"/>
+  </g>
+
+  <!-- CONTENT LIST (right) -->
+  <g>
+    <!-- row template -->
+    <g stroke="#1f2a52" stroke-width="2" stroke-linejoin="round">
+      <rect x="206" y="44" width="150" height="28" rx="6" fill="#fff"/>
+      <rect x="214" y="50" width="18" height="16" rx="2.5" fill="#e7f6f0"/>
+      <rect x="206" y="80" width="150" height="28" rx="6" fill="#fff"/>
+      <rect x="214" y="86" width="18" height="16" rx="2.5" fill="#e7f6f0"/>
+      <rect x="206" y="116" width="150" height="28" rx="6" fill="#fff"/>
+      <rect x="214" y="122" width="18" height="16" rx="2.5" fill="#e7f6f0"/>
+    </g>
+    <!-- mini play marks -->
+    <g fill="#16a47d" stroke="none">
+      <path d="M220 54 L227 58 L220 62 Z"/>
+      <path d="M220 90 L227 94 L220 98 Z"/>
+      <path d="M220 126 L227 130 L220 134 Z"/>
+    </g>
+    <!-- text lines -->
+    <g stroke="#cfe6dd" stroke-width="2.5" stroke-linecap="round">
+      <line x1="242" y1="55" x2="322" y2="55"/><line x1="242" y1="62" x2="300" y2="62"/>
+      <line x1="242" y1="91" x2="322" y2="91"/><line x1="242" y1="98" x2="300" y2="98"/>
+      <line x1="242" y1="127" x2="322" y2="127"/><line x1="242" y1="134" x2="300" y2="134"/>
+    </g>
+    <!-- status dots: published / pending / review -->
+    <circle cx="342" cy="58" r="4.5" fill="#16a47d"/>
+    <circle cx="342" cy="94" r="4.5" fill="#34c79b"/>
+    <circle cx="342" cy="130" r="4.5" fill="none" stroke="#1f2a52" stroke-width="2"/>
+  </g>
+</svg></div>
+        <div class="work-body">
+          <div class="work-top"><h3 data-i18n="card.cm.h3">Content Management</h3><span class="work-tag" data-i18n="card.cm.tag">Enterprise HCM · UX Revamp</span></div>
+          <p data-i18n="card.cm.p">Rebuilt Orca HCM's course and micro-learning module — turning an aging uploader into a <b>YouTube-style guided flow</b>, plus a UGC micro-course workflow with approve / return review so admins keep quality and permissions in control.</p>
+          <span class="impact" data-i18n="card.cm.impact">Consumer-grade UX for enterprise training</span>
+        </div>
+      </article>
+
+      <article class="work reveal">
+        <div class="work-illu">
+          <svg viewBox="0 0 400 158" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="158" fill="#e7f6f0"/>
+
+  <!-- AI ROBOT (left) -->
+  <g stroke="#1f2a52" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+    <line x1="74" y1="44" x2="74" y2="34"/>
+    <circle cx="74" cy="31" r="4.5" fill="#16a47d" stroke="none"/>
+    <rect x="44" y="46" width="60" height="48" rx="13" fill="#fff"/>
+    <rect x="36" y="64" width="8" height="16" rx="3" fill="#fff"/>
+    <rect x="104" y="64" width="8" height="16" rx="3" fill="#fff"/>
+    <rect x="53" y="55" width="42" height="30" rx="8" fill="#1f2a52" stroke="none"/>
+    <ellipse cx="65" cy="70" rx="4" ry="6" fill="#34c79b" stroke="none"/>
+    <ellipse cx="83" cy="70" rx="4" ry="6" fill="#34c79b" stroke="none"/>
+    <rect x="58" y="100" width="32" height="20" rx="6" fill="#fff"/>
+  </g>
+
+  <!-- LANGUAGE TILES + exchange -->
+  <!-- tile 文 -->
+  <g stroke="#1f2a52" stroke-width="2.5" stroke-linejoin="round">
+    <rect x="158" y="48" width="52" height="52" rx="9" fill="#fff"/>
+    <path d="M196 48 L210 48 L210 62 Z" fill="#16a47d" stroke="none"/>
+    <text x="183" y="85" font-size="27" font-weight="700" fill="#1f2a52" text-anchor="middle" stroke="none">文</text>
+  </g>
+  <!-- tile A -->
+  <g stroke="#1f2a52" stroke-width="2.5" stroke-linejoin="round">
+    <rect x="266" y="48" width="52" height="52" rx="9" fill="#fff"/>
+    <path d="M304 48 L318 48 L318 62 Z" fill="#16a47d" stroke="none"/>
+    <text x="291" y="85" font-size="27" font-weight="700" fill="#1f2a52" text-anchor="middle" stroke="none">A</text>
+  </g>
+  <!-- exchange arrows -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#1f2a52" stroke-width="3.5">
+      <line x1="218" y1="64" x2="258" y2="64"/>
+      <path d="M250 58 L260 64 L250 70"/>
+    </g>
+    <g stroke="#16a47d" stroke-width="3.5">
+      <line x1="258" y1="84" x2="218" y2="84"/>
+      <path d="M226 78 L216 84 L226 90"/>
+    </g>
+  </g>
+
+  <!-- TRANSLATE pill -->
+  <g>
+    <rect x="170" y="116" width="150" height="26" rx="13" fill="#16a47d"/>
+    <path d="M186 123 l2 4 l4 2 l-4 2 l-2 4 l-2 -4 l-4 -2 l4 -2 Z" fill="#fff"/>
+    <text x="252" y="133" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" stroke="none" font-family="sans-serif" letter-spacing="1">TRANSLATE</text>
+  </g>
+</svg>
+        </div>
+        <div class="work-body">
+          <div class="work-top"><h3 data-i18n="card.ai.h3">AI Translation PoC</h3><span class="work-tag" data-i18n="card.ai.tag">AI / LLM · Frontier</span></div>
+          <p data-i18n="card.ai.p">Benchmarked traditional machine translation against multiple LLMs (<b>Google Gemini 2.0 Flash-Lite</b>), designed SEO- and localization-aware prompts, and defined the MVP — laying the groundwork for Rezio's AI translation.</p>
+          <span class="impact" data-i18n="card.ai.impact">Learning agility, productized</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOURNEY ============ -->
+<section id="journey">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-kicker" data-i18n="jn.kicker">Professional Journey</span><span class="sec-bar"></span></div>
+    <h2 class="sec-title reveal" data-i18n="jn.title">From translator to product lead</h2>
+    <p class="journey-intro reveal" style="margin:16px 0 0;" data-i18n="jn.intro">My path wasn't a straight line — and that's the point. Each step widened the lens: language → requirements → design → owning complex cross-border products end to end.</p>
+    <div class="exp-list">
+      <div class="exp reveal">
+        <div class="exp-when">2021 — 2025</div>
+        <div>
+          <div class="exp-role" data-i18n="jn.r1">Product Manager</div>
+          <div class="exp-co" data-i18n="jn.co1">Rezio (a KKday company)</div>
+          <p class="exp-desc" data-i18n="jn.d1">Enterprise SaaS booking &amp; operations platform serving 2,000+ merchants globally. Shipped 20+ features spanning ticketing, payments, dashboards and AI proof-of-concepts.</p>
+        </div>
+      </div>
+      <div class="exp reveal">
+        <div class="exp-when">2017 — 2020</div>
+        <div>
+          <div class="exp-role" data-i18n="jn.r2">Lead Product Designer</div>
+          <div class="exp-co" data-i18n="jn.co2">Learning Digital Inc.</div>
+          <p class="exp-desc" data-i18n="jn.d2">Led a 10-person agile team (design / QA / engineering) on Orca HCM — 12 modules, 150+ features — with clients including Chunghwa Post and Regent Hotels.</p>
+        </div>
+      </div>
+      <div class="exp reveal">
+        <div class="exp-when">2013 — 2017</div>
+        <div>
+          <div class="exp-role" data-i18n="jn.r3">Product Planner &amp; In-house Translator</div>
+          <div class="exp-co" data-i18n="jn.co2">Learning Digital Inc.</div>
+          <p class="exp-desc" data-i18n="jn.d3">Requirements analysis, wireframing, UI/UX, and EN&#8596;ZH technical documentation.</p>
+        </div>
+      </div>
+      
+    </div>
+    <div class="note reveal" data-i18n="jn.note">✦ Despite no formal design training, my progression from translation to product leadership shows a steady habit: expand the skill set, then take on more responsibility.</div>
+  </div>
+</section>
+
+<!-- ============ SKILLS (dark) ============ -->
+<section id="skills">
+  <div class="wrap">
+    <div class="dark" style="padding:60px clamp(28px,5vw,64px);">
+      <div class="sec-head reveal"><span class="sec-kicker" data-i18n="sk.kicker">Core Competencies</span><span class="sec-bar"></span></div>
+      <h2 class="sec-title reveal" data-i18n="sk.title">What I bring to the table</h2>
+      <div class="comp-grid">
+        <div class="comp reveal">
+          <div class="cn">01</div>
+          <h4 data-i18n="sk.h1">Product Design & UX</h4>
+          <ul><li data-i18n="sk.h1a">Wireframing & prototyping</li><li data-i18n="sk.h1b">User experience design</li><li data-i18n="sk.h1c">User journey & flow charts</li><li data-i18n="sk.h1d">MVP definition</li></ul>
+        </div>
+        <div class="comp reveal">
+          <div class="cn">02</div>
+          <h4 data-i18n="sk.h2">Product Management</h4>
+          <ul><li data-i18n="sk.h2a">Team collaboration & leadership</li><li data-i18n="sk.h2b">PRD / spec development</li><li data-i18n="sk.h2c">API-doc reading → spec translation</li><li data-i18n="sk.h2d">UAT / Stage testing</li></ul>
+        </div>
+        <div class="comp reveal">
+          <div class="cn">03</div>
+          <h4 data-i18n="sk.h3">Cross-Cultural Comms</h4>
+          <ul><li data-i18n="sk.h3a">English — TOEIC 990 (Gold)</li><li data-i18n="sk.h3b">French — DELF B1</li><li data-i18n="sk.h3c">Native Mandarin & Taiwanese</li><li data-i18n="sk.h3d">Cross-border localization</li></ul>
+        </div>
+      </div>
+      <div class="tools-label reveal" data-i18n="sk.tools">Design & collaboration tools</div>
+      <div class="tools reveal">
+        <span class="chip">Figma</span><span class="chip">Notion</span><span class="chip">Miro</span>
+        <span class="chip">Slack</span><span class="chip">Gemini</span><span class="chip">Claude Cowork</span>
+      </div>
+    </div>
+
+    <div class="quote reveal">
+      <div class="mark">“</div>
+      <p data-i18n="sk.quote">Product success comes from strong teamwork. I love working with diverse colleagues — empathy is how we embrace challenges and break barriers together.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact reveal">
+      <h2 data-i18n="ct.title">Let's build something users actually love.</h2>
+      <p data-i18n="ct.sub">Open to Senior PM / Product Planner roles — Taipei, remote, EU or Japan.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:u8004800@gmail.com" data-i18n="btn.email">Email me</a>
+        <a class="btn ghost" href="https://linkedin.com/in/janetcyl" target="_blank" rel="noopener" data-i18n="btn.linkedin">LinkedIn ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap" style="display:flex;justify-content:space-between;width:100%;flex-wrap:wrap;gap:8px;">
+  <span>© 2026 Janet Chen · 陳毓聆</span>
+  <span data-i18n="ft.made">Designed &amp; built from scratch</span>
+</div></footer>
+
+<!-- ============ CASE-STUDY MODAL ============ -->
+<div class="modal" id="csModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Case study">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-dialog">
+    <div class="modal-bar">
+      <span class="lbl" id="csLabel">Case study</span>
+      <button class="modal-close" type="button" data-close aria-label="Close case study">✕ Close</button>
+    </div>
+    <iframe id="csFrame" title="Case study" src="about:blank" loading="lazy"></iframe>
+  </div>
+</div>
+
+<script>
+  const nav=document.getElementById('nav');
+  const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>12);
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach((e)=>{
+      if(e.isIntersecting){
+        const sibs=Array.from(e.target.parentElement.querySelectorAll('.reveal'));
+        const idx=sibs.indexOf(e.target);
+        e.target.style.transitionDelay=Math.min(idx,5)*70+'ms';
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  /* ---------- Case-study modal wiring ---------- */
+  const caseStudies={
+    "card.tix.h3":"case-study-rezio-tix.html",
+    "card.pay.h3":"case-study-paypal.html",
+    "card.dash.h3":"case-study-order-dashboard.html"
+  };
+  const modal=document.getElementById('csModal');
+  const frame=document.getElementById('csFrame');
+  const label=document.getElementById('csLabel');
+  let lastFocus=null;
+
+  const arrowSVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
+  function openCase(src,title){
+    lastFocus=document.activeElement;
+    frame.src=src+'#'+(document.documentElement.lang.indexOf('zh')===0?'zh':'en');
+    label.textContent=title;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+    modal.querySelector('.modal-close').focus();
+  }
+  function closeCase(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+    setTimeout(()=>{frame.src='about:blank';},380);
+    if(lastFocus)lastFocus.focus();
+  }
+
+  document.querySelectorAll('.work').forEach(card=>{
+    const h=card.querySelector('h3');
+    if(!h)return;
+    const src=caseStudies[h.dataset.i18n];
+    if(!src)return;
+    const title=h.textContent.trim();
+    card.classList.add('clickable');
+    card.setAttribute('role','button');
+    card.setAttribute('tabindex','0');
+    card.setAttribute('aria-label',title+' — view case study');
+    const body=card.querySelector('.work-body');
+    const impact=body.querySelector('.impact');
+    const link=document.createElement('span');
+    link.className='cs-link';
+    link.dataset.i18n='cs.link';
+    link.innerHTML='Case study '+arrowSVG;
+    const foot=document.createElement('div');
+    foot.className='card-foot';
+    if(impact){body.insertBefore(foot,impact);foot.appendChild(impact);}else{body.appendChild(foot);}
+    foot.appendChild(link);
+    card.addEventListener('click',()=>openCase(src,title));
+    card.addEventListener('keydown',e=>{
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();openCase(src,title);}
+    });
+  });
+
+  modal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeCase));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeCase();});
+</script>
+
+<script>
+  const I18N={"nav.about": {"en": "About", "zh": "關於"}, "nav.work": {"en": "Work", "zh": "作品"}, "nav.journey": {"en": "Journey", "zh": "歷程"}, "nav.skills": {"en": "Skills", "zh": "專長"}, "nav.contact": {"en": "Contact", "zh": "聯絡"}, "hero.eyebrow": {"en": "Senior Product Planner · B2B2C SaaS", "zh": "資深產品企劃 · B2B2C SaaS"}, "hero.title": {"en": "A product expert with<br/>business acumen<br/>and a <em>UX soul.</em>", "zh": "既懂商業，<br/>也有 <em>UX 靈魂</em><br/>的產品專家。"}, "hero.m1": {"en": "<i class=\"dot\"></i> 9+ yrs in B2B2C SaaS", "zh": "<i class=\"dot\"></i> 9+ 年 B2B2C SaaS 經驗"}, "hero.m2": {"en": "<i class=\"dot\"></i> Travel Tech · HCM", "zh": "<i class=\"dot\"></i> 旅遊科技 · 人才管理（HCM）"}, "hero.m3": {"en": "<i class=\"dot\"></i> Taipei · open to remote / EU / JP", "zh": "<i class=\"dot\"></i> 台北 · 可遠端／歐洲／日本"}, "btn.email": {"en": "Email me", "zh": "寄信給我"}, "btn.linkedin": {"en": "LinkedIn ↗", "zh": "LinkedIn ↗"}, "about.kicker": {"en": "About", "zh": "關於"}, "about.lead": {"en": "I'm Janet, an <span class=\"hl\">experienced Product Manager and UX Designer</span> who starts from the user and turns complexity into something simple, clear, and detailed enough to ship. Across <span class=\"hl\">9+ years</span> in Travel Tech and HCM SaaS, I've shipped 20+ features for platforms serving thousands of merchants worldwide.", "zh": "我是 Janet，一位<span class=\"hl\">經驗豐富的產品經理與 UX 設計師</span>。我習慣從使用者出發，把複雜問題收斂成簡單、清楚、縝密規劃的產品。<span class=\"hl\">9 年以上</span>橫跨旅遊科技與企業人才管理（HCM）SaaS 系統，交付 20+ 項功能，服務全球數千家商家。"}, "about.soft": {"en": "Not classically design-trained — I came from English literature, and that's my edge. I untangle messy, multi-stakeholder problems, sweat the details others skip, and turn them into flows that just make sense. I read API docs end-to-end and brief engineering myself — so my work moves real numbers: conversion, cost, adoption, satisfaction.", "zh": "我不是設計科班出身——而是英文系出身，這正是我的優勢。我擅長釐清多方角力的複雜問題、在意別人略過的細節，把它們收斂成順理成章的流程；也能閱讀 API 文件、轉譯成開發需求。因此我的作品總能推動真實的數字：轉換率、成本、採用率與滿意度。"}, "work.kicker": {"en": "Selected Work", "zh": "精選作品"}, "work.title": {"en": "Projects that moved the numbers", "zh": "推動關鍵數字的專案"}, "card.tix.h3": {"en": "Rezio TIX — OMO Ticketing", "zh": "Rezio TIX — 線上線下售票整合"}, "card.tix.tag": {"en": "Travel Tech · OMO", "zh": "旅遊科技 · OMO"}, "card.tix.p": {"en": "A 0-to-1 hardware/software system unifying online booking with offline <b>POS counters and self-service kiosks</b> — designed for two very different users, with live inventory sync, smart date/session selection and daily cash-reconciliation safeguards. Deployed at Heping Island Geopark; experienced by Vice President Lai Ching-te on his 2024 KKday visit.", "zh": "從 0 到 1 整合線上預訂與線下 <b>POS 售票機、Kiosk 自助機</b>，串成一套；具備多元支付、即時庫存同步與每日交班對帳防呆功能。和平島地質公園已自 2023 年導入使用至今，2024 年賴清德副總統參訪 KKday 時親自體驗。"}, "card.tix.impact": {"en": "↓ 30% operating cost", "zh": "↓ 30% 營運成本"}, "card.pay.h3": {"en": "Cross-border Payments", "zh": "跨境多元支付"}, "card.pay.tag": {"en": "FinTech · SEA / JP", "zh": "金融科技 · 東南亞／日本"}, "card.pay.p": {"en": "<b>PayPal:</b> as project owner, led the integration to reach overseas markets Stripe couldn't serve — running a weekly sync with PayPal's team in India, bridging the language gap for our engineers and driving the expansion. <b>TapPay JP:</b> led Japan's localized switch with card pre-authorization, multi-currency and a dropped-transaction auto-retry safeguard.", "zh": "<b>PayPal：</b>以專案負責人主導串接，並與原廠印度團隊建立每週同步，協助溝通開發細節、推動市場拓展。<b>TapPay JP：</b>主導日本在地金流轉換，處理刷卡預授權、多幣別，以及斷線交易的「補單排程」防呆。"}, "card.pay.impact": {"en": "↑ 15%+ SEA conversion", "zh": "↑ 15%+ 東南亞轉換率"}, "card.dash.h3": {"en": "Order Dashboard", "zh": "待處理訂單儀表板"}, "card.dash.tag": {"en": "Enterprise · Performance", "zh": "企業級 · 效能"}, "card.dash.p": {"en": "For mega-suppliers like <b>Nikko Toshogu and Asahiyama Zoo</b> handling tens of thousands of orders: I redesigned the order list into 18 quick-filter categories with red/yellow deadline countdown flags, and optimized the list UI and search to cut query time sharply.", "zh": "為日光東照宮、旭山動物園等破萬訂單的巨型供應商設計便捷、視覺化的訂單管理功能：利用快捷分類與直覺化操作，加上處理期限倒數標籤，並優化列表 UI 與搜尋，大幅縮短查詢時間。"}, "card.dash.impact": {"en": "↓ 50%+ order query time", "zh": "↓ 50%+ 訂單查詢時間"}, "card.orca.h3": {"en": "Orca Go — Learning App", "zh": "Orca Go — 行動學習 App"}, "card.orca.tag": {"en": "Mobile Learning · 0→1", "zh": "行動學習 · 0→1"}, "card.orca.p": {"en": "An enterprise mobile learning app. With <b>zero prior app experience</b> and tight resources, I defined the MVP (who / what / why) and delivered 60+ screens in 4 months on 2-week sprints. Drove upgrades from Regent Hotels, Sinyi Realty and PTI; opened new business with My Humble House Group.", "zh": "在<b>零 App 經驗</b>、資源吃緊的情況下，我定義 MVP（誰／做什麼／為什麼），以兩週一個 Sprint、4 個月交付 60+ 頁面。促成晶華酒店、永慶房屋、力成科技升級，並開發寒舍集團新客戶。"}, "card.orca.impact": {"en": "Tens of thousands of downloads", "zh": "中大型企業採用"}, "card.cm.h3": {"en": "Content Management", "zh": "教材內容管理"}, "card.cm.tag": {"en": "Enterprise HCM · UX Revamp", "zh": "企業 HCM · UX 改版"}, "card.cm.p": {"en": "Rebuilt Orca HCM's course and micro-learning module — turning an aging uploader into a <b>YouTube-style guided flow</b>, plus a UGC micro-course workflow with approve / return review so admins keep quality and permissions in control.", "zh": "重構 Orca HCM 的教材與微課模組——把老舊的上傳元件改造成 <b>YouTube 式引導流程</b>，並加入 UGC 微課的「提升審核」（核准／退回）機制，讓管理員牢牢掌控品質與權限。"}, "card.cm.impact": {"en": "Consumer-grade UX for enterprise training", "zh": "把企業培訓做出消費級體驗"}, "card.ai.h3": {"en": "AI Translation PoC", "zh": "AI 翻譯 PoC"}, "card.ai.tag": {"en": "AI / LLM · Frontier", "zh": "AI／LLM · 前瞻"}, "card.ai.p": {"en": "Benchmarked traditional machine translation against multiple LLMs (<b>Google Gemini 2.0 Flash-Lite</b>), designed SEO- and localization-aware prompts, and defined the MVP — laying the groundwork for Rezio's AI translation.", "zh": "比較傳統機器翻譯與多款 LLM（<b>Google Gemini 2.0 Flash-Lite</b>），設計兼顧 SEO 與在地化的 Prompt，並定義 MVP——為 Rezio 未來導入 AI 翻譯奠定基礎。"}, "card.ai.impact": {"en": "Learning agility, productized", "zh": "把學習力變成產品力"}, "jn.kicker": {"en": "Professional Journey", "zh": "職涯歷程"}, "jn.title": {"en": "From translator to product lead", "zh": "從介面翻譯到產品主導"}, "jn.intro": {"en": "My path wasn't a straight line — and that's the point. Each step widened the lens: language → requirements → design → owning complex cross-border products end to end.", "zh": "我的歷程從不是一條直線——而這正是重點。每一步都在放大視野：語言 → 需求 → 設計 → 端到端主導複雜的跨境產品。"}, "jn.r1": {"en": "Product Manager", "zh": "產品經理"}, "jn.r2": {"en": "Lead Product Designer", "zh": "產品設計主管"}, "jn.r3": {"en": "Product Planner &amp; In-house Translator", "zh": "產品企劃 & 內部翻譯"}, "jn.co1": {"en": "Rezio (a KKday company)", "zh": "Rezio（KKday 旗下）"}, "jn.co2": {"en": "Learning Digital Inc.", "zh": "一宇數位 Learning Digital"}, "jn.d1": {"en": "Enterprise SaaS booking &amp; operations platform serving 2,000+ merchants globally. Shipped 20+ features spanning ticketing, payments, dashboards and AI proof-of-concepts.", "zh": "企業級 SaaS 預訂與營運平台，全球服務 2,000+ 商家；交付 20+ 項功能，橫跨票務、金流、儀表板與 AI 概念驗證。"}, "jn.d2": {"en": "Led a 10-person agile team (design / QA / engineering) on Orca HCM — 12 modules, 150+ features — with clients including Chunghwa Post and Regent Hotels.", "zh": "帶領 10 人敏捷團隊（設計／QA／工程）開發 Orca HCM——12 模組、150+ 功能——客戶含中華郵政與晶華酒店。"}, "jn.d3": {"en": "Requirements analysis, wireframing, UI/UX, and EN&#8596;ZH technical documentation.", "zh": "需求分析、功能測試、線框稿、UI/UX，以及中英介面文案與產品文件翻譯。"}, "jn.note": {"en": "✦ Despite no formal design training, my progression from translation to product leadership shows a steady habit: expand the skill set, then take on more responsibility.", "zh": "✦ 儘管沒有正式設計訓練，我能從翻譯一路走到產品主導，靠的是一個穩定的習慣：先擴張能力，再承接更大的責任。"}, "sk.kicker": {"en": "Core Competencies", "zh": "核心能力"}, "sk.title": {"en": "What I bring to the table", "zh": "我能帶來的價值"}, "sk.h1": {"en": "Product Design & UX", "zh": "產品設計 & UX"}, "sk.h1a": {"en": "Wireframing & prototyping", "zh": "線框稿與原型"}, "sk.h1b": {"en": "User experience design", "zh": "使用者體驗設計"}, "sk.h1c": {"en": "User journey & flow charts", "zh": "使用者旅程與流程圖"}, "sk.h1d": {"en": "MVP definition", "zh": "MVP 定義"}, "sk.h2": {"en": "Product Management", "zh": "產品管理"}, "sk.h2a": {"en": "Team collaboration & leadership", "zh": "團隊協作與領導"}, "sk.h2b": {"en": "PRD / spec development", "zh": "PRD／規格撰寫"}, "sk.h2c": {"en": "API-doc reading → spec translation", "zh": "API 文件研讀 → 規格轉譯"}, "sk.h2d": {"en": "UAT / Stage testing", "zh": "UAT／Stage 測試"}, "sk.h3": {"en": "Cross-Cultural Comms", "zh": "跨文化溝通"}, "sk.h3a": {"en": "English — TOEIC 990 (Gold)", "zh": "英文 — 多益 990（金證）"}, "sk.h3b": {"en": "French — DELF B1", "zh": "法文 — DELF B1"}, "sk.h3c": {"en": "Native Mandarin & Taiwanese", "zh": "中文與台語母語"}, "sk.h3d": {"en": "Cross-border localization", "zh": "跨境在地化"}, "sk.tools": {"en": "Design & collaboration tools", "zh": "設計與協作工具"}, "sk.quote": {"en": "Product success comes from strong teamwork. I love working with diverse colleagues — empathy is how we embrace challenges and break barriers together.", "zh": "產品的成功來自團隊。我喜歡與背景各異的夥伴合作——同理心讓我們一起擁抱挑戰、打破隔閡。"}, "ct.title": {"en": "Let's build something users actually love.", "zh": "一起打造使用者真心喜愛的產品。"}, "ct.sub": {"en": "Open to Senior PM / Product Planner roles — Taipei, remote, EU or Japan.", "zh": "資深 PM／產品企劃——台北、遠端、歐洲或日本。"}, "ft.made": {"en": "Designed &amp; built from scratch", "zh": "從零親手設計打造"}};
+  const ARROW='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+  I18N['cs.link']={en:'Case study '+ARROW, zh:'個案研究 '+ARROW};
+  function applyLang(l){
+    document.documentElement.lang=(l==='zh'?'zh-Hant':'en');
+    document.querySelectorAll('[data-i18n]').forEach(el=>{const d=I18N[el.dataset.i18n];if(d&&d[l]!=null)el.innerHTML=d[l];});
+    const b=document.getElementById('langToggle');if(b)b.textContent=(l==='en'?'中文版':'English version');
+  }
+  let LANG=localStorage.getItem('lang');
+  if(LANG!=='zh'&&LANG!=='en'){LANG=((navigator.language||'').toLowerCase().indexOf('zh')===0)?'zh':'en';}
+  const _t=document.getElementById('langToggle');
+  if(_t)_t.addEventListener('click',()=>{LANG=(LANG==='en'?'zh':'en');localStorage.setItem('lang',LANG);applyLang(LANG);});
+  applyLang(LANG);
+</script>
+</body>
+</html>
